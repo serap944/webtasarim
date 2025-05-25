@@ -1,0 +1,255 @@
+        /* TEMEL STİLLER */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* BAŞLIK ALANI */
+        .baslik-alani {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .ana-baslik {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Mevcut kart stilini koru + ekstra form stil */
+
+
+/* Buton stilleri */
+.teklif-butonu {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+        /* MENÜ */
+        .menu-cubugu {
+            background-color: #34495e;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .menu-listesi {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-oge {
+            margin: 0 1rem;
+        }
+
+        .menu-baglantisi {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+main {
+    
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.kart {  display: flex;
+    background-color: white;
+    margin:0;
+  align-items: center;
+    justify-content: center;
+    align-items: stretch;
+}
+/* Mevcut stilleriniz */
+.karta {
+  width: 70%;
+  padding: 1rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.karta.hareketi {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* h2 için animasyonlu alt çizgi efekti */
+.karta.hareketi h2 {
+  animation: fadeIn 0.5s ease-out forwards;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px; /* Çizgi ile metin arası boşluk */
+}
+
+/* Alt çizgi animasyonu */
+.karta.hareketi h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3498db; /* Çizgi rengi */
+  animation: underlineExpand 0.5s 0.5s ease-out forwards; /* 0.5s gecikmeli */
+}
+
+/* p elementi animasyonu (mevcut) */
+.karta.hareketi p {
+  animation: fadeIn 0.5s 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Yeni alt çizgi animasyonu */
+@keyframes underlineExpand {
+  from { width: 0; left: 50%; }
+  to { width: 100%; left: 0; }
+}
+.kartb {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 30px;
+}
+
+.kartb img {
+    object-fit: cover;
+    width: 100%;
+    border-radius: 30px; /* Görsel için de border-radius */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+ 
+}
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+                /* Önceki CSS kodlarına eklemeler */
+       
+        
+        .kart:target {
+            animation: vurgula 1.5s;
+        }
+
+        
+        @keyframes vurgula {
+            0% { background-color: rgba(52, 152, 219, 0.1); }
+            100% { background-color: transparent; }
+        }
+   
+
+        
+.teklif-formu {
+    display: flex;
+    padding:2rem;
+    flex-direction: column;
+    font-weight: bold;
+    color:white;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width:100%;
+    margin:0;
+   background-image: url('images/resim4.jpg');
+     background-position: center; /* Resmi ortalar */
+     border-radius: 5px;
+       background-size: cover;       /* Resmi alanı tam kaplar */
+
+}
+.teklif-formu h2 {
+  color: white;
+  font-weight: 900; /* Daha kalın yazı */
+  font-size: 2.2rem; /* Boyutu büyütme */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Metin gölgesi */
+  letter-spacing: 1px; /* Harf aralığını açma */
+}
+
+.teklif-formu input, 
+.teklif-formu #gonder {
+  width: 60%;
+  font-size: 18px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 7px 12px; /* Aynı padding */
+  box-sizing: border-box; /* Padding ve border'ı genişliğe dahil eder */
+}
+
+
+/* ALT BİLGİ */
+.alt-bilgi {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.footer-a, .footer-b {
+    list-style: none;
+    
+
+}
+
+.footer-b {
+    display: block;
+    margin:auto 0;
+}
+
+.footer-b a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.footer-b a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            .menu-listesi {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-oge {
+                margin: 0.5rem 0;
+            }
+
+            .ana-baslik {
+                font-size: 2rem;
+            }
+            .şcerik-bolumu{
+                margin:0 auto;
+
+            }
+            .kart{
+                display:block;
+                flex-direction: column;
+                margin: 1rem;
+            }
+        }
