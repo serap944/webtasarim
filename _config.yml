@@ -1,0 +1,5 @@
+title: Noradark Web Tasarım
+description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-seo-tag
