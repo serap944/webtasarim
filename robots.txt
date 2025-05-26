@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
-Sitemap: https://noradark.shop/sitemap.xml
+Crawl-delay: 2
+Disallow: /_config.yml
+Disallow: /_layouts/
+Disallow: /_includes/
+
+# Sitemap (www ile tutarlı şekilde)
+Sitemap: https://www.noradark.shop/sitemap.xml
