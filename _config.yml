@@ -1,19 +1,31 @@
 title: Noradark Web Tasarım
 description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
 theme: jekyll-theme-minimal
-url: "https://www.noradark.shop"  # Kritik: www ile tam URL
-baseurl: ""  # Önemli: Boş bırakın
+url: "https://www.noradark.shop"  # www ile tam URL
+baseurl: ""  # Boş bırakıldı (doğru)
 
-# Sitemap ve SEO ayarları
+# Dil ve lokal ayarları (SEO için önemli)
+locale: "tr_TR"
+language: "tr"
+timezone: "Europe/Istanbul"
+
+# Eklentiler
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap  # Otomatik sitemap oluşturur
 
-include: [sitemap.xml]  # Manuel sitemap için gerekli
-
-# Jekyll 4.0+ için gerekli
+# Collections ayarı (düzeltildi)
 collections:
   pages:
     output: true
-    permalink: /:path/
-    url: "https://www.noradark.shop"
+    permalink: /:path/  # Doğru format
+
+# Google Analytics (opsiyonel - eklerseniz)
+google_analytics: "G-XXXXXXXXXX"  # Google Analytics 4 ID
+
+# Jekyll build ayarları
+markdown: kramdown
+permalink: pretty  # SEO-friendly URL yapısı
+
+# Gerekli değil - kaldırılabilir:
+# include: [sitemap.xml]  # jekyll-sitemap eklentisi bunu otomatik halleder
