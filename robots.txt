@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://noradark.shop/sitemap.xml
