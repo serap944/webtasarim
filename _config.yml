@@ -16,3 +16,4 @@ collections:
   pages:
     output: true
     permalink: /:path/
+    url: "https://www.noradark.shop"
