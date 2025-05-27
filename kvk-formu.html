@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>KVKK Formu - Noradark</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 15px; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
+        .checkbox { margin-top: 20px; }
+        button { background-color: #2ecc71; color: white; padding: 10px 20px; border: none; margin-top: 20px; cursor: pointer; }
+        button:hover { background-color: #27ae60; }
+        .kvkk-links { margin-top: 20px; font-size: 14px; }
+    </style>
+   <!-- CSS -->
+    <link rel="stylesheet" href="still.css">
+</head>
+
+      <header class="baslik-alani">
+        <h1 class="ana-baslik">Noradark </h1>
+   <div class="teklif">
+
+ <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
+  
+    </button></div>
+    </header>
+
+
+
+    <!-- MENÜ -->
+    <nav class="menu-cubugu">
+
+        <ul class="menu-listesi">
+           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
+            <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
+            <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
+            <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
+        </ul>
+    </nav>
+  
+<body>
+    <h1>İletişim ve KVKK Onay Formu</h1>
+
+    <form action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
+        <!-- Gerekli Alanlar -->
+        <label for="name">Ad Soyad *</label>
+        <input type="text" id="name" name="Ad Soyad" required>
+
+        <label for="phone">Telefon Numarası *</label>
+        <input type="tel" id="phone" name="Telefon Numarası" required>
+
+        <label for="details">Proje Detayları (isteğe bağlı)</label>
+        <textarea id="details" name="Proje Detayları" rows="5"></textarea>
+
+        <!-- KVKK Onayı -->
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="KVKK Onayı" required>
+                Kişisel verilerimin <a href="kvkk-aydinlatma.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesine onay veriyorum.
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="Açık Rıza Onayı" required>
+                <a href="acik-riza.html" target="_blank">Açık Rıza Metni</a>'ni okudum, anladım ve onaylıyorum.
+            </label>
+        </div>
+
+        <!-- Güvenlik Ayarları (formsubmit için) -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://www.siteniz.com/tesekkurler.html">
+
+        <button type="submit">Gönder</button>
+    </form>
+
+    <div class="kvkk-links">
+        <p><strong>Not:</strong> Lütfen formu göndermeden önce Aydınlatma ve Açık Rıza metinlerini okuyunuz.</p>
+    </div>
+
+  <!-- ALT BİLGİ -->
+<footer class="alt-bilgi">
+    <div class="footer-a">
+        <p>Tüm hakları saklıdır &copy; 2025 </p>     
+    </div>
+    <div class="footer-b">
+        <h4>hızlı erişim</h4>
+        <p>
+            <a href="/gizlilik">Gizlilik & teslimat</a>   </p>  
+            <p><a href="/satis-sözleşmesi">Mesafeli satış sözleşmesi</a> </p>
+            <p> <a href="/iptal-iade">İptal & iade koşulları</a></p>
+
+   
+    </div> 
+</footer>
+
+</body>
+</html>
