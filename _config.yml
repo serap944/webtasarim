@@ -2,7 +2,7 @@
 title: Noradark Web Tasarım
 description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
 url: "https://www.noradark.shop"  # Sonunda / OLMAMALI
-baseurl: ""  # Subpath kullanmıyorsanız boş bırakın
+baseurl: ""  # Subpath kullanmıyorsanız boş bırakın 
 
 # GitHub Pages Özel Ayarları
 remote_theme: jekyll-theme-minimal  # GitHub Pages için theme yerine remote_theme kullanın
