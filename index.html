@@ -12,15 +12,15 @@
     <meta property="og:title" content="Noradark Web Tasarım">
     <meta property="og:description" content="Profesyonel ve uygun fiyatlı web tasarım hizmetleri">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://noradark.shop">
-    <meta property="og:image" content="https://noradark.shop/images/resim2.jpg">
+    <meta property="og:url" content="https://www.noradark.shop">
+    <meta property="og:image" content="https://www.noradark.shop/images/resim2.jpg">
     
     <!-- Favicon -->
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/images/apple-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://noradark.shop">
+    <link rel="canonical" href="https://www.noradark.shop">
     
     <!-- CSS -->
     <link rel="stylesheet" href="still.css">
@@ -162,11 +162,7 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
      
 <article>
   <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
-    <!-- Gizli Alanlar -->
-    <input type="hidden" name="_subject" value="Noradark'dan Yeni Mesaj!">
-    <input type="hidden" name="_autoresponse" value="Mesajınız alındı. Teşekkür ederiz!">
-    <input type="hidden" name="_next" value="https://noradark.shop/tesekkurler.html"> <!-- Gönderim sonrası yönlendirme -->
-    
+  
     <!-- Kullanıcı Giriş Alanları -->
     <div class="form-group">
       <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
@@ -188,7 +184,7 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
     <div class="kvkk-onay">
       <label>
         <input type="checkbox" name="kvkk_onay" required>
-        <a href="/kvkk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a>
+        <a href="/kvkk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a> ve 
            <a href="/acik-riza" target="_blank">açık rıza onayı</a>
           kapsamında 
         verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
@@ -199,17 +195,18 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
     <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
     <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
     
+    <!-- Geri bildirim mesajı alanı -->
+    <div id="formMesaji" style="display: none; margin: 15px 0; padding: 10px; border-radius: 4px;"></div>
+    
     <!-- Gönder Butonu -->
     <div class="form-group">
       <button type="submit" class="gonder">Gönder</button>
     </div>
   </form>
 </article>
-
       
-  
-   
-        
+
+    
         <article class="kart">
             <div class="karta">
             <h2>Web Tasarım Hizmetlerimiz</h2>
@@ -291,6 +288,40 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 }); // DOMContentLoaded fonksiyonunun kapanışı
+
+     
+// bilgilendirme mesajı
+      document.getElementById('teklifFormu').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = this;
+    const formMesaji = document.getElementById('formMesaji');
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      if (response.ok) {
+        // Form başarıyla gönderildi
+        formMesaji.textContent = 'Formunuz gönderildi.';
+        formMesaji.style.display = 'block';
+        formMesaji.style.backgroundColor = '#d4edda';
+        formMesaji.style.color = '#155724';
+        form.reset();
+      } else {
+        // Hata oluştu
+        throw new Error('Form gönderilemedi');
+      }
+    })
+    .catch(error => {
+      // Hata durumunda
+      formMesaji.textContent = 'Sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.';
+      formMesaji.style.display = 'block';
+      formMesaji.style.backgroundColor = '#f8d7da';
+      formMesaji.style.color = '#721c24';
+      console.error('Form gönderme hatası:', error);
+    });
+  });
 </script>
 </body>
 </html>
