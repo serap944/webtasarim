@@ -158,16 +158,54 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
                  </p></div>
         </article>
         
-            
      
-  <form class="teklif-formu" id="teklifFormu">
+     
+<article>
+  <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
+    <!-- Gizli Alanlar -->
+    <input type="hidden" name="_subject" value="Noradark'dan Yeni Mesaj!">
+    <input type="hidden" name="_autoresponse" value="Mesajınız alındı. Teşekkür ederiz!">
+    <input type="hidden" name="_next" value="https://noradark.shop/tesekkurler.html"> <!-- Gönderim sonrası yönlendirme -->
     
-    <h2>Teklif Formu</h2>
-    <input type="text" placeholder="Adınız ve soyadınız" required>
-    <input type="tel" placeholder="Telefon numaranız" required>
-    <button type="submit" id="gonder">Gönder</button>
-    </form>
-        </article>     
+    <!-- Kullanıcı Giriş Alanları -->
+    <div class="form-group">
+      <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
+    </div>
+    
+    <div class="form-group">
+      <input type="email" name="E-posta" placeholder="E-posta Adresiniz" required>
+    </div>
+    
+    <div class="form-group">
+      <input type="tel" name="Telefon" placeholder="Telefon Numaranız" required>
+    </div>
+    
+    <div class="form-group">
+      <textarea name="Mesaj" placeholder="Mesajınız" rows="5"></textarea>
+    </div>
+    
+    <!-- KVKK Onayı -->
+    <div class="kvkk-onay">
+      <label>
+        <input type="checkbox" name="kvkk_onay" required>
+        <a href="/kvkk-aydinlatma-metni" target="_blank">Kişisel Verilerin Korunması Kanunu</a> kapsamında 
+        verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
+      </label>
+    </div>
+    
+    <!-- Güvenlik Doğrulama -->
+    <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
+    <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
+    
+    <!-- Gönder Butonu -->
+    <div class="form-group">
+      <button type="submit" class="gonder">Gönder</button>
+    </div>
+  </form>
+</article>
+
+      
+  
    
         
         <article class="kart">
