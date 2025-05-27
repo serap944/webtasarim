@@ -2,10 +2,10 @@
 title: Noradark Web Tasarım
 description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
 url: "https://www.noradark.shop"  # Sonunda / OLMAMALI
-baseurl: ""  # Subpath kullanmıyorsanız boş bırakın 
+baseurl: ""  # Subpath kullanmıyorsanız boş bırakın
 
 # GitHub Pages Özel Ayarları
-remote_theme: jekyll-theme-minimal  # GitHub Pages için theme yerine remote_theme kullanın
+remote_theme: jekyll-theme-minimal
 
 # Dil ve Lokal Ayarları
 locale: "tr_TR"
@@ -14,24 +14,20 @@ timezone: "Europe/Istanbul"
 
 # Build Ayarları
 markdown: kramdown
-permalink: pretty  # Veya /:title/ şeklinde özelleştirebilirsiniz
-future: false  # Gelecek tarihli post'ları gösterme
+permalink: pretty
+future: false
+
+# Eklentiler
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed  # RSS feed desteği
+  - jekyll-feed
   - jekyll-optional-front-matter
 
-# Collections Ayarları
-collections:
-  pages:
-    output: true
-    permalink: /:path/  # /sayfa/ şeklinde URL'ler için
+# Google Analytics (GA4) - GÜNCELLENMİŞ KISIM
+google_analytics: G-WPD243Y25V  # Tırnak işaretleri olmadan
 
-# Google Analytics (GA4)
-google_analytics: "G-WPD243Y25V"  # Ölçüm Kimliğiniz
-
-# Varsayılanlar (Opsiyonel)
+# Varsayılanlar
 defaults:
   - scope:
       path: ""
@@ -40,7 +36,3 @@ defaults:
       layout: "page"
       comments: false
       author: "Noradark"
-
-# Sitenin görünümü ile ilgili ayarlar
-jekyll-theme-minimal:
-  # Tema spesifik ayarlar buraya
