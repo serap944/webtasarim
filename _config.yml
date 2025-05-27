@@ -1,31 +1,46 @@
+# Site Temel Ayarları
 title: Noradark Web Tasarım
 description: Profesyonel ve uygun fiyatlı web tasarım hizmetleri
-theme: jekyll-theme-minimal
-url: "https://www.noradark.shop"  # www ile tam URL
-baseurl: ""  # Boş bırakıldı (doğru)
+url: "https://www.noradark.shop"  # Sonunda / OLMAMALI
+baseurl: ""  # Subpath kullanmıyorsanız boş bırakın
 
-# Dil ve lokal ayarları (SEO için önemli)
+# GitHub Pages Özel Ayarları
+remote_theme: jekyll-theme-minimal  # GitHub Pages için theme yerine remote_theme kullanın
+
+# Dil ve Lokal Ayarları
 locale: "tr_TR"
 language: "tr"
 timezone: "Europe/Istanbul"
 
-# Eklentiler
+# Build Ayarları
+markdown: kramdown
+permalink: pretty  # Veya /:title/ şeklinde özelleştirebilirsiniz
+future: false  # Gelecek tarihli post'ları gösterme
 plugins:
   - jekyll-seo-tag
-  - jekyll-sitemap  # Otomatik sitemap oluşturur
+  - jekyll-sitemap
+  - jekyll-feed  # RSS feed desteği
+  - jekyll-optional-front-matter
 
-# Collections ayarı (düzeltildi)
+# Collections Ayarları
 collections:
   pages:
     output: true
-    permalink: /:path/  # Doğru format
+    permalink: /:path/  # /sayfa/ şeklinde URL'ler için
 
-# Google Analytics (opsiyonel - eklerseniz)
-google_analytics: "G-XXXXXXXXXX"  # Google Analytics 4 ID
+# Google Analytics (GA4)
+google_analytics: "G-WPD243Y25V"  # Ölçüm Kimliğiniz
 
-# Jekyll build ayarları
-markdown: kramdown
-permalink: pretty  # SEO-friendly URL yapısı
+# Varsayılanlar (Opsiyonel)
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      author: "Noradark"
 
-# Gerekli değil - kaldırılabilir:
-# include: [sitemap.xml]  # jekyll-sitemap eklentisi bunu otomatik halleder
+# Sitenin görünümü ile ilgili ayarlar
+jekyll-theme-minimal:
+  # Tema spesifik ayarlar buraya
