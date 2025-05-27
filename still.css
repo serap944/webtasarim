@@ -185,7 +185,7 @@ main {
 }
 
 .form-group {
-    width: 80%;
+    width: 70%;
         
 }
 
@@ -198,7 +198,7 @@ main {
 .teklif-formu input,
 .teklif-formu textarea {
     width: 100%;
-    padding: 12px 15px;
+    padding: 10px 12px;
     border: 2px solid #ddd;
     border-radius: 6px;
     font-size: 16px;
