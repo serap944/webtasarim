@@ -163,39 +163,108 @@ main {
         
 .teklif-formu {
     display: flex;
-    padding:2rem;
     flex-direction: column;
-    font-weight: bold;
-    color:white;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
-    width:100%;
-    margin:0;
-   background-image: url('images/resim4.jpg');
-     background-position: center; /* Resmi ortalar */
-     border-radius: 5px;
-       background-size: cover;       /* Resmi alanı tam kaplar */
-
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('images/resim4.jpg') center/cover no-repeat;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
 .teklif-formu h2 {
-  color: white;
-  font-weight: 900; /* Daha kalın yazı */
-  font-size: 2.2rem; /* Boyutu büyütme */
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Metin gölgesi */
-  letter-spacing: 1px; /* Harf aralığını açma */
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
-.teklif-formu input, 
-.teklif-formu #gonder {
-  width: 60%;
-  font-size: 18px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 7px 12px; /* Aynı padding */
-  box-sizing: border-box; /* Padding ve border'ı genişliğe dahil eder */
+.form-group {
+    width: 100%;
 }
 
+.teklif-formu label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.teklif-formu input,
+.teklif-formu textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.teklif-formu input:focus,
+.teklif-formu textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.kvkk-onay {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+}
+
+.kvkk-onay input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.kvkk-onay a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.kvkk-onay a:hover {
+    text-decoration: underline;
+}
+
+.gonder {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.gonder:hover {
+    background-color: #45a049;
+}
+
+
+
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .teklif-formu {
+        padding: 1.5rem;
+    }
+    
+    .teklif-formu h2 {
+        font-size: 1.5rem;
+    }
+}
 
 /* ALT BİLGİ */
 .alt-bilgi {
