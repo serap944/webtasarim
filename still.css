@@ -322,3 +322,44 @@ main {
                 margin: 1rem;
             }
         }
+          /* Basit Modal Stilleri */
+ /* Bildirim Stilleri */
+  .bildirim {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+  }
+
+  .bildirim.goster {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bildirim.success {
+    background-color: #28a745;
+  }
+
+  .bildirim.error {
+    background-color: #dc3545;
+  }
+
+  /* Animasyon */
+  @keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
