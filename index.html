@@ -195,14 +195,23 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
     <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
     <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
     
-    <!-- Geri bildirim mesajı alanı -->
-    <div id="formMesaji" style="display: none; margin: 15px 0; padding: 10px; border-radius: 4px;"></div>
     
     <!-- Gönder Butonu -->
     <div class="form-group">
       <button type="submit" class="gonder">Gönder</button>
     </div>
   </form>
+
+ <!-- Basitleştirilmiş Modal -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <div id="modalIcon"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalMessage"></p>
+      <button id="modalButton" class="modal-btn">Tamam</button>
+    </div>
+  </div>
+
 </article>
       
 
@@ -294,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('teklifFormu').addEventListener('submit', function(e) {
     e.preventDefault();
     const form = this;
-    const formMesaji = document.getElementById('formMesaji');
+    const modal = document.getElementById('formModal');
     
     fetch(form.action, {
       method: 'POST',
@@ -302,26 +311,43 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .then(response => {
       if (response.ok) {
-        // Form başarıyla gönderildi
-        formMesaji.textContent = 'Formunuz gönderildi.';
-        formMesaji.style.display = 'block';
-        formMesaji.style.backgroundColor = '#d4edda';
-        formMesaji.style.color = '#155724';
+        showModal('Başarılı', '✓ Formunuz gönderildi', 'success');
         form.reset();
       } else {
-        // Hata oluştu
         throw new Error('Form gönderilemedi');
       }
     })
     .catch(error => {
-      // Hata durumunda
-      formMesaji.textContent = 'Sistemsel bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.';
-      formMesaji.style.display = 'block';
-      formMesaji.style.backgroundColor = '#f8d7da';
-      formMesaji.style.color = '#721c24';
-      console.error('Form gönderme hatası:', error);
+      showModal('Hata', '✗ İşlem başarısız oldu', 'error');
+      console.error('Hata:', error);
     });
   });
+
+  function showModal(title, message, type) {
+    const modal = document.getElementById('formModal');
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalMessage').textContent = message;
+    
+    // Simge ekleme
+    const icon = document.getElementById('modalIcon');
+    icon.textContent = type === 'success' ? '✓' : '✗';
+    
+    // Modal class'ını ayarla
+    modal.className = 'modal ' + type;
+    modal.style.display = 'flex';
+    
+    // Kapatma işlevi
+    document.getElementById('modalButton').onclick = function() {
+      modal.style.display = 'none';
+    };
+    
+    // Dışarı tıklayarak kapatma
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    };
+  }
 </script>
 </body>
 </html>
