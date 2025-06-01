@@ -26,29 +26,28 @@
     <link rel="stylesheet" href="still.css">
     
     <!-- Schema.org markup for Google -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Noradark",
-      "image": "https://noradark.shop/images/resim2.jpg",
-      "@id": "https://noradark.shop#business",
-      "url": "https://noradark.shop",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      } 
-    }
-        
-    </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Noradark",
+  "image": "https://noradark.shop/images/resim2.jpg",
+  "@id": "https://noradark.shop#business",
+  "url": "https://noradark.shop",
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }]
+}
+</script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
 <script> // kaç tıklanma var
   window.dataLayer = window.dataLayer || [];
@@ -119,9 +118,9 @@ Renk paleti, tipografi (yazı tipleri), simgeler ve görseller </p>
 
  <P> (Duyarlı) Tasarım</P>
 
-<p>Web sitesinin farklı cihazlarda (bilgisayar, tablet, telefon) doğru şekilde görüntülenmesi</p>
+<p>Web sitesinin farklı cihazlarda (bilgisayar, tablet, telefon) doğru şekilde görüntülenmesi
 
- ve Wireframing
+ ve Wireframing</p>
 
 <p>Site yapısının basit şemalarla (wireframe) planlanması</p>
 
@@ -160,7 +159,7 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
         
      
      
-<article>
+  <article class="kart">
   <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
   
     <!-- Kullanıcı Giriş Alanları -->
@@ -201,16 +200,6 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
       <button type="submit" class="gonder">Gönder</button>
     </div>
   </form>
-
- <!-- Basitleştirilmiş Modal -->
-  <div id="formModal" class="modal">
-    <div class="modal-content">
-      <div id="modalIcon"></div>
-      <h3 id="modalTitle"></h3>
-      <p id="modalMessage"></p>
-      <button id="modalButton" class="modal-btn">Tamam</button>
-    </div>
-  </div>
 
 </article>
       
@@ -298,46 +287,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }); // DOMContentLoaded fonksiyonunun kapanışı
 
-   
-   const form = document.getElementById('teklifFormu');
   
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const button = this.querySelector('button');
-    button.disabled = true;
-    button.textContent = 'Gönderiliyor...';
-    
-    try {
-      const response = await fetch(this.action, {
-        method: 'POST',
-        body: new FormData(this)
-      });
-      
-      if(response.ok) {
-        showBildirim('Form gönderildi', 'basarili');
-        this.reset();
-      } else {
-        throw new Error('Hata oluştu');
-      }
-    } catch(error) {
-      showBildirim('Gönderim başarısız', 'hata');
-    } finally {
-      button.disabled = false;
-      button.textContent = 'Gönder';
-    }
-  });
-  
-  function showBildirim(message, type) {
-    const div = document.createElement('div');
-    div.className = `bildirim ${type}`;
-    div.textContent = message;
-    document.body.appendChild(div);
-    
-    setTimeout(() => {
-      div.remove();
-    }, 3000);
-  }
 </script>
 </body>
 </html>
