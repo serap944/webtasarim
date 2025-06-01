@@ -20,6 +20,7 @@
             margin-bottom: 0.5rem;
         }
 
+
         /* Mevcut kart stilini koru + ekstra form stil */
 
 
@@ -32,6 +33,16 @@
   border-radius: 4px;
   cursor: pointer;
 }
+.menu-toggle {
+  display: none;
+  background: none; /* 'background-color: none' yerine 'background: none' */
+  border: none;
+  color: white;
+  font-size: 1.5rem; /* Boyut ekleyin */
+  cursor: pointer; /* İmleç tipi */
+  padding: 0.5rem; /* Padding ekleyin */
+}
+
 
 
         /* MENÜ */
@@ -255,16 +266,6 @@ main {
 
 
 
-/* Mobil Uyumluluk */
-@media (max-width: 768px) {
-    .teklif-formu {
-        padding: 1.5rem;
-    }
-    
-    .teklif-formu h2 {
-        font-size: 1.5rem;
-    }
-}
 
 /* ALT BİLGİ */
 .alt-bilgi {
@@ -298,17 +299,56 @@ main {
     text-decoration: underline;
     color: #3498db;
 }
+
+
         /* MOBİL UYUMLULUK */
         @media (max-width: 768px) {
             .menu-listesi {
                 flex-direction: column;
                 align-items: center;
             }
+                  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(to right, #6a1b9a, #1a237e);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    order: 2;
+    z-index: 101;
+    margin-left: 10px;
+  }
 
-            .menu-oge {
-                margin: 0.5rem 0;
+            .menu-cubugu {
+               position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a1b9a, #1a237e);
+    padding: 5rem 1rem 1rem;
+    transition: right 0.3s ease-out;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
             }
-
+.menu-cubugu.active{
+        right: 0;           
+}
+                .menu-cubugu ul{
+   flex-direction: column;
+    gap: 1rem;
+    padding-top: 1rem;
+                }
+ .menu-cubugu li {
+    width: 100%;
+  }
+                
             .ana-baslik {
                 font-size: 2rem;
             }
@@ -316,6 +356,7 @@ main {
                 margin:0 auto;
 
             }
+                
             .kart{
                 display:block;
                 flex-direction: column;
@@ -326,7 +367,15 @@ width: 100%;
 height:auto;
 
             }
+                    .teklif-formu {
+        padding: 1.5rem;
+    }
+    
+    .teklif-formu h2 {
+        font-size: 1.5rem;
+    }
         }
+
        
   /* yazi altçizgi Animasyon */
   @keyframes slideIn {
