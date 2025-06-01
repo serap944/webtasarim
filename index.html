@@ -61,6 +61,11 @@
     <!-- BAŞLIK ALANI -->
     <header class="baslik-alani">
         <h1 class="ana-baslik">Noradark </h1>
+        
+            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
+    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+      <i class="fas fa-bars"></i>
+    </button>
    <div class="teklif">
 
  <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
@@ -286,6 +291,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 }); // DOMContentLoaded fonksiyonunun kapanışı
+
+     
+//MENU//
+  const menuToggle = document.querySelector('.menu-toggle');
+  const mainNav = document.querySelector('.menu-cubugu');
+  
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('active');
+    
+    // İkon değişimi (bars ↔ times)
+    const icon = this.querySelector('i');
+    if (mainNav.classList.contains('active')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
 
   
 </script>
