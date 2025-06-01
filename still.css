@@ -321,6 +321,11 @@ main {
                 flex-direction: column;
                 margin: 1rem;
             }
+            .kart img{
+width: 100%;
+height:auto;
+
+            }
         }
           /* Basit Modal Stilleri */
  /* Bildirim Stilleri */
