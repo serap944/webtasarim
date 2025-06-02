@@ -297,100 +297,110 @@ main {
     color: #3498db;
 }
 
-
-        /* MOBİL UYUMLULUK */
-        @media (max-width: 768px) {
-.baslik-alani{
-    margin:0;
-        width:100%;
-}
-
-
-                  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: linear-gradient(to right, #3498db, #1a237e);
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 1.5rem;
-    cursor: pointer;
-    order: 2;
-    z-index: 101;
-    margin-left: 10px;
-  }
-
-            .menu-cubugu {
-               position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: linear-gradient(to bottom, #6a1b9a, #1a237e);
-    padding: 5rem 1rem 1rem;
-    transition: right 0.3s ease-out;
-    z-index: 100;
-    overflow-y: auto;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-            }
-.menu-cubugu.active{
-        right: 0;           
-}
-                .menu-cubugu ul{
-   flex-direction: column;
-    gap: 1rem;
-    padding-top: 1rem;
-                }
- .menu-cubugu li {
-    width: 100%;
-  }
-          
-            main{
-                margin:0 auto;
-
-            }
-                
-            .kart{
-                display:block;
-                flex-direction: column;
-                padding: 1rem;
-            }
-
-            .kartb{
-                flex-shrink:0;
-                max-height:250px;
-            }
-            .kartb img{
-width: 100%;
-height:auto;
-
-            }
-                    .teklif-formu {
-     margin:0;
-        padding:1rem;
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
+    .baslik-alani {
+        margin: 0;
+        width: 100%;
     }
-    
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(to right, #3498db, #1a237e);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        order: 2;
+        z-index: 101;
+        margin-left: 10px;
+    }
+
+    .menu-cubugu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: linear-gradient(to right, #3498db, #1a237e);
+        padding: 5rem 1rem 1rem;
+        transition: right 0.3s ease-out;
+        z-index: 100;
+        overflow-y: auto;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu-cubugu.active {
+        right: 0;
+    }
+
+    .menu-cubugu ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding-top: 1rem;
+    }
+
+    .menu-cubugu li {
+        width: 100%;
+    }
+
+    main {
+        margin: 0 auto;
+        padding: 0 15px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .kart {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .kartb {
+        flex-shrink: 0;
+        max-height: 250px;
+        width: 100%;
+    }
+
+    .kartb img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .teklif-formu {
+        margin: 0;
+        padding: 1rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .teklif-formu h2 {
         font-size: 1.5rem;
     }
-                .form-group {
-flex-direction: column;
-                        
-                }
-                
-        }
 
-       
-  /* yazi altçizgi Animasyon */
-  @keyframes slideIn {
+    .form-group {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+/* YAZI ALTÇİZGİ ANİMASYON */
+@keyframes slideIn {
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
-  }
+}
 
-  @keyframes fadeOut {
+@keyframes fadeOut {
     from { opacity: 1; }
     to { opacity: 0; }
-  }
+}
