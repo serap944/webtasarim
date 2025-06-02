@@ -297,11 +297,21 @@ main {
     color: #3498db;
 }
 
+
 /* MOBİL UYUMLULUK */
 @media (max-width: 768px) {
+    /* Genel sayfa düzeni için önemli eklemeler */
+    html, body {
+        width: 100%;
+        overflow-x: hidden; /* Yatay kaymayı engeller */
+    }
+    
     .baslik-alani {
         margin: 0;
         width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
 
     .menu-toggle {
@@ -355,6 +365,7 @@ main {
         padding: 0 15px;
         width: 100%;
         box-sizing: border-box;
+        overflow: hidden; /* İçerik taşmasını engeller */
     }
 
     .kart {
@@ -363,17 +374,21 @@ main {
         padding: 1rem;
         width: 100%;
         box-sizing: border-box;
+        margin: 0;
     }
 
     .kartb {
         flex-shrink: 0;
         max-height: 250px;
         width: 100%;
+        overflow: hidden; /* Resim taşmasını engeller */
     }
 
     .kartb img {
         width: 100%;
         height: auto;
+        max-width: 100%; /* Ekstra güvenlik önlemi */
+        display: block; /* Resim altındaki boşluğu kaldırır */
         object-fit: contain;
     }
 
