@@ -394,8 +394,9 @@ main {
 
     .teklif-formu {
         margin: 0;
-        padding: 1rem;
-        width: 100%;
+       justify-content:center;
+            align-items:center;
+             flex-direction: column;
         box-sizing: border-box;
     }
 
@@ -404,7 +405,7 @@ main {
     }
 
     .form-group {
-        flex-direction: column;
+       
         width: 100%;
     }
 }
