@@ -264,9 +264,6 @@ main {
 }
 
 
-
-
-
 /* ALT BİLGİ */
 .alt-bilgi {
     display:flex;
@@ -303,6 +300,10 @@ main {
 
         /* MOBİL UYUMLULUK */
         @media (max-width: 768px) {
+.baslik-alani{
+    margin:0;
+}
+
             .menu-listesi {
                 flex-direction: column;
                 align-items: center;
@@ -313,7 +314,7 @@ main {
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: linear-gradient(to right, #6a1b9a, #1a237e);
+    background: linear-gradient(to right, #3498db, #1a237e);
     border: none;
     border-radius: 5px;
     color: white;
@@ -348,11 +349,8 @@ main {
  .menu-cubugu li {
     width: 100%;
   }
-                
-            .ana-baslik {
-                font-size: 2rem;
-            }
-            .şcerik-bolumu{
+          
+            main{
                 margin:0 auto;
 
             }
@@ -360,15 +358,20 @@ main {
             .kart{
                 display:block;
                 flex-direction: column;
-                margin: 1rem;
+                padding: 1rem;
             }
-            .kart img{
+
+            .kartb{
+                flex-shrink:0;
+                max-height:250px;
+            }
+            .kartb img{
 width: 100%;
 height:auto;
 
             }
                     .teklif-formu {
-        padding: 1.5rem;
+     margin:0;
     }
     
     .teklif-formu h2 {
