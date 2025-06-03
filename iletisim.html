@@ -36,15 +36,55 @@
     <!-- İÇERİK -->
     <main>
 
-
- <form class="teklif-formu" id="teklifFormu">
+     
+  <article class="kart">
+      
+  <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
+  
+    <!-- Kullanıcı Giriş Alanları -->
+    <div class="form-group">
+      <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
+    </div>
+    <div class="form-group">
+      <input type="email" name="E-posta" placeholder="E-posta Adresiniz" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="Telefon" placeholder="Telefon Numaranız" required>
+    </div>
+   <div class="form-group">
+      <textarea name="Mesaj" placeholder="Mesajınız" rows="5"></textarea>
+    </div>
     
-    <h2>Teklif Formu</h2>
-    <input type="text" placeholder="Adınız ve soyadınız" required>
-    <input type="tel" placeholder="Telefon numaranız" required>
-    <button type="submit" id="gonder">Gönder</button>
-    </form>
-        </article>     
+    <!-- KVKK Onayı -->
+    <div class="kvkk-onay">
+      <label>
+        <input type="checkbox" name="kvkk_onay" required>
+        <a href="/kvk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a> ve 
+           <a href="/acik-riza" target="_blank">açık rıza onayı</a>
+          kapsamında 
+        verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
+      </label>
+    </div>
+    
+    <!-- Güvenlik Doğrulama -->
+    <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
+    <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
+    
+    
+    <!-- Gönder Butonu -->
+    <div class="form-group">
+      <button type="submit" class="gonder">Gönder</button>
+    </div>
+  </form>
+  <!-- Bildirim Kutusu -->
+  <div id="formBildirim" class="bildirim">
+    <div class="bildirim-icerik">
+      <span class="kapat">&times;</span>
+      <p class="bildirim-mesaj"></p>
+    </div>
+  </div>
+</article>
+        
 
 
 </main>
