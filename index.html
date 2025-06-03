@@ -47,6 +47,8 @@
   }]
 }
 </script>
+
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> //teklifformuna götürmesi için jquerynin scroll animasyonundan destek alıyorum
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
 <script> // kaç tıklanma var
   window.dataLayer = window.dataLayer || [];
@@ -312,9 +314,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
      //teklif formuna götürme
-function scrollToForm() {
-    const teklifFormu = document.getElementById("teklifFormu"); // # işareti KALDIRILDI
-    teklifFormu.scrollIntoView({ behavior: 'smooth' }); // Yumuşak kaydırma efekti
+ function scrollToForm() {
+    $('html, body').animate({
+        scrollTop: $('#teklifFormu').offset().top
+    }, 1500); // 1.5 saniye
 }
   
 </script>
