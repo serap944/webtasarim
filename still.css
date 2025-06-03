@@ -261,47 +261,53 @@ main {
 
 .gonder:hover {
     background-color: #45a049;
-}
-.form-bildirim {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 18px 25px;
-  border-radius: 8px;
-  color: white;
-  background: #4CAF50;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  font-family: 'Arial', sans-serif;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  max-width: 320px;
-  line-height: 1.4;
-}
-
-.form-bildirim.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.form-bildirim.error {
-  background: #f44336;
-}
-
-.form-bildirim::before {
-  content: "✓";
-  font-size: 20px;
-}
-
-.form-bildirim.error::before {
-  content: "✗";
-}
-
+}<style>
+  .bildirim {
+    position: fixed;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+    opacity: 0;
+    transition: all 0.5s ease;
+    display: flex;
+    align-items: center;
+  }
+  
+  .bildirim.goster {
+    opacity: 1;
+    top: 20px;
+  }
+  
+  .bildirim-icerik {
+    position: relative;
+  }
+  
+  .kapat {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    background: rgba(0,0,0,0.2);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bildirim-mesaj {
+    margin: 0;
+    font-size: 16px;
+  }
 /* ALT BİLGİ */
 .alt-bilgi {
     display:flex;
