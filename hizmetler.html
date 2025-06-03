@@ -78,6 +78,25 @@
     <input type="tel" placeholder="Telefon numaranız" required>
     <button type="submit" id="gonder">Gönder</button>
     </form>
+   <!-- Güvenlik Doğrulama -->
+    <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
+    <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
+    
+    
+    <!-- Gönder Butonu -->
+    <div class="form-group">
+      <button type="submit" class="gonder">Gönder</button>
+    </div>
+  </form>
+  <!-- Bildirim Kutusu -->
+  <div id="formBildirim" class="bildirim">
+    <div class="bildirim-icerik">
+      <span class="kapat">&times;</span>
+      <p class="bildirim-mesaj"></p>
+    </div>
+  </div>
+
+            
         </article>     
 <article class="kart">
         <h3>CMS Entegrasyonu </h3> 
@@ -104,6 +123,6 @@
    
     </div> 
 </footer>
-
+<script src="script.js" defer></script>
 </body>
 </html>
