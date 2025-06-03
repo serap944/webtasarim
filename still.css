@@ -262,7 +262,19 @@ main {
 .gonder:hover {
     background-color: #45a049;
 }
-
+ #toast {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: white;
+    padding: 12px;
+    border-radius: 4px;
+    animation: fade 3s;
+  }
+  @keyframes fade { 0%,100% {opacity:0} 10%,90% {opacity:1} }
 
 /* ALT BİLGİ */
 .alt-bilgi {
