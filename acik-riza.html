@@ -2,47 +2,40 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Açık Rıza Metni - Noradark</title>
-
-     <!-- CSS -->
     <link rel="stylesheet" href="still.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="canonical" href="https://www.noradark.shop/acik-riza" />
-
-          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- teklifformuna götürmesi için jquerynin scroll animasyonundan destek alıyorum -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
-<script> // kaç tıklanma var
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WPD243Y25V');
-</script>
-
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WPD243Y25V');
+        
+        function scrollToForm() {
+            $('html, body').animate({
+                scrollTop: $("#teklifFormu").offset().top
+            }, 800);
+        }
+    </script>
 </head>
-<!-- Geri kalan HTML kodu aynı kalacak -->
 <body>
     <!-- BAŞLIK ALANI -->
     <header class="baslik-alani">
-        <h1 class="ana-baslik">Noradark </h1>
-        
-            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
-    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
-      <i class="fas fa-bars"></i>
-    </button>
-   <div class="teklif">
-
- <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
-  
-    </button></div>
+        <h1 class="ana-baslik">Noradark</h1>
+        <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+            <i class="fas fa-bars"></i>
+        </button>
+    
     </header>
-
-
     
     <!-- MENÜ -->
     <nav class="menu-cubugu">
-
         <ul class="menu-listesi">
-           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
+            <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
             <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
             <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
             <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
@@ -51,58 +44,104 @@
 
     <!-- İÇERİK -->
     <main>
-  <article class="kart">
-    <h1>KİŞİSEL VERİLERİN İŞLENMESİNE AÇIK RIZA METNİ</h1>
-    
-    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında, kişisel verilerimin <strong>Noradark Web Tasarım</strong> tarafından aşağıda belirtilen amaçlarla işlenmesine açıkça rıza gösteriyorum.</p>
-    
-    <h2>İşlenecek Veriler</h2>
-    <ul>
-        <li>Ad Soyad</li>
-        <li>Telefon Numarası</li>
-        <li>Proje Detayları (isteğe bağlı)</li>
-    </ul>
-  </article>
- <article class="kart">
-    <h2>İşleme Amaçları</h2>
-    <ul>
-        <li>Tarafıma web tasarım hizmeti teklifi sunulması</li>
-        <li>Hizmet sürecinin yürütülmesi ve iletişime geçilmesi</li>
-        <li>Gerekli durumlarda yasal yükümlülüklerin yerine getirilmesi</li>
-    </ul>
-    
-    <h2>Veri Aktarımı</h2>
-    <p>Veriler yalnızca form aracılığıyla <strong>serap.ekin.12@gmail.com</strong> adresine iletilecek olup, üçüncü taraflarla paylaşılmayacaktır.</p>
-    
-    <h2>Rıza Beyanı</h2>
-    <p>Kişisel verilerimin yukarıda belirtilen kapsamda işlenmesine açık rıza gösterdiğimi, bu metni okuyup anladığımı beyan ederim.</p>
-
-    <p><strong>Ad Soyad:</strong> ____________________________</p>
-    <p><strong>Tarih:</strong> ____ / ____ / _______</p>
-    <p><strong>İmza:</strong> ____________________________</p>
-    
-    <div class="update-date">
-        <p><strong>Son Güncelleme:</strong> 27/05/2025</p>
-    </div>
- </article>
-        </main>
+        <article class="kart">
+            <h1>KİŞİSEL VERİLERİN İŞLENMESİNE İLİŞKİN AÇIK RIZA BEYANI</h1>
+            
+            <section class="onay-metni">
+                <p>6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") uyarınca, <strong>Noradark Web Tasarım</strong> tarafından aşağıda belirtilen kapsamda kişisel verilerimin işlenmesine ilişkin açık rızamı aşağıda beyan ederim:</p>
+                
+                <h2><i class="fas fa-user-circle"></i> İşlenecek Veri Kategorileri</h2>
+                <div class="veri-listesi">
+                    <ul>
+                        <li><strong>Kimlik Bilgileri:</strong> Ad, soyad</li>
+                        <li><strong>İletişim Bilgileri:</strong> Telefon numarası, e-posta adresi</li>
+                        <li><strong>Müşteri İşlem Bilgileri:</strong> Talep ettiğiniz hizmet detayları</li>
+                    </ul>
+                </div>
+                
+                <h2><i class="fas fa-bullseye"></i> İşleme Amaçları</h2>
+                <div class="amac-listesi">
+                    <ol>
+                        <li>Web tasarım hizmet teklifinin hazırlanması</li>
+                        <li>Sözleşme süreçlerinin yürütülmesi</li>
+                        <li>Yasal yükümlülüklerin yerine getirilmesi (fatura kesme vb.)</li>
+                        <li>Müşteri memnuniyeti ölçümleri</li>
+                    </ol>
+                </div>
+                
+                <h2><i class="fas fa-shield-alt"></i> Veri Güvenliği</h2>
+                <div class="guvenlik-bilgisi">
+                    <p>Verileriniz; 5651 sayılı Kanun ve ilgili mevzuat uyarınca, yalnızca gerekli süre boyunca ve aşağıdaki önlemlerle korunmaktadır:</p>
+                    <ul>
+                        <li>SSL şifreleme ile veri transferi</li>
+                        <li>Sınırlı erişim yetkileri</li>
+                        <li>Düzenli güvenlik denetimleri</li>
+                    </ul>
+                </div>
+                
+                <h2><i class="fas fa-exchange-alt"></i> Veri Aktarımı</h2>
+                <div class="aktarim-bilgisi">
+                    <p>Verileriniz yalnızca:</p>
+                    <ul>
+                        <li>FormSubmit aracılığıyla <u>serap.ekin.12@gmail.com</u> adresine</li>
+                        <li>Yasal zorunluluk halinde resmi makamlara</li>
+                    </ul>
+                    <p>aktarılacaktır.</p>
+                </div>
+            </section>
+            
+            <section class="riza-beyani">
+                <h2><i class="fas fa-check-circle"></i> Rıza Beyanı</h2>
+                <div class="uyari">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Önemli:</strong> Bu rıza beyanı veri işleme faaliyetlerinin hukuki dayanağı değildir. KVKK'nın 5. maddesi uyarınca yasal dayanaklar çerçevesinde işleme yapılacaktır.</p>
+                </div>
+                
+                <form id="acikRizaForm" class="onay-formu">
+                    <div class="form-grup">
+                        <label>
+                            <input type="checkbox" name="acik_riza" required>
+                            <strong>Kişisel verilerimin yukarıda belirtilen amaçlarla işlenmesine ve gerekli durumlarda aktarılmasına açıkça rıza gösteriyorum.</strong>
+                        </label>
+                    </div>
+                    
+                    <div class="imza-alani">
+                        <div class="imza-satiri">
+                            <label>Ad Soyad:</label>
+                            <input type="text" name="adi_soyadi" required>
+                        </div>
+                        <div class="imza-satiri">
+                            <label>Tarih:</label>
+                            <input type="date" name="tarih" required>
+                        </div>
+                        <div class="imza-satiri">
+                            <label>İmza (Dijital Onay):</label>
+                            <input type="text" name="dijital_imza" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="onay-butonu">Onayla ve Gönder</button>
+                </form>
+                
+                <div class="hukuki-not">
+                    <p><strong>Hukuki Uyarı:</strong> Bu form elektronik onay niteliğindedir. KVKK'nın 5/1. maddesi uyarınca açık rızanız alınmıştır. Rızanızı dilediğiniz zaman <a href="mailto:serap.ekin.12@gmail.com">serap.ekin.12@gmail.com</a> adresine e-posta göndererek geri çekebilirsiniz.</p>
+                </div>
+            </section>
+            
+            <div class="guncelleme-tarihi">
+                <p><strong>Son Güncelleme:</strong> 27/05/2025</p>
+            </div>
+        </article>
+    </main>
     
     <!-- ALT BİLGİ -->
-<footer class="alt-bilgi">
-    <div class="footer-a">
-        <p>Tüm hakları saklıdır &copy; 2025 </p>     
-    </div>
-
-
-    <div class="footer-b">
-        <h4>hızlı erişim</h4>
-        <p>
-            <a href="/gizlilik">Gizlilik & teslimat</a>   </p>  
-            <p><a href="/satis-sözleşmesi">Mesafeli satış sözleşmesi</a> </p>
-            <p> <a href="/iptal-iade">İptal & iade koşulları</a></p>
-
-    </div> 
-</footer>
-
-</body>
-</html>
+    <footer class="alt-bilgi">
+        <div class="footer-a">
+            <p>Tüm hakları saklıdır &copy; 2025</p>     
+        </div>
+        <div class="footer-b">
+            <h4>hızlı erişim</h4>
+            <p><a href="/gizlilik">Gizlilik & teslimat</a></p>  
+            <p><a href="/satis-sozlesmesi">Mesafeli satış sözleşmesi</a></p>
+            <p><a href="/iptal-iade">İptal & iade koşulları</a></p>
+        </div> 
+    </footer>
