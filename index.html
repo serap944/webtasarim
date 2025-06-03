@@ -318,7 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500); // 1.5 saniye
 }
 
-
 document.getElementById('teklifFormu').addEventListener('submit', async (e) => {
   e.preventDefault();
   const form = e.target;
@@ -330,22 +329,22 @@ document.getElementById('teklifFormu').addEventListener('submit', async (e) => {
       body: new FormData(form)
     });
     
-    bildirim.textContent = '✓ Teşekkürler! Mesajınız iletildi.';
-    bildirim.style.background = '#4CAF50';
-    bildirim.style.display = 'block';
+    // Başarılı bildirim
+    bildirim.innerHTML = '<span>Teşekkürler! Mesajınız başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.</span>';
+    bildirim.className = 'form-bildirim show';
     form.reset();
     
+    // 5 saniye sonra kaybolsun
     setTimeout(() => {
-      bildirim.style.display = 'none';
+      bildirim.className = 'form-bildirim';
     }, 5000);
     
   } catch (error) {
-    bildirim.textContent = '✗ Gönderim başarısız. Lütfen tekrar deneyin.';
-    bildirim.style.background = '#f44336';
-    bildirim.style.display = 'block';
+    // Hata bildirimi
+    bildirim.innerHTML = '<span>Gönderim başarısız oldu. Lütfen bilgilerinizi kontrol edip tekrar deneyin.</span>';
+    bildirim.className = 'form-bildirim show error';
   }
 });
-</script>
 </script>
 </body>
 </html>
