@@ -304,6 +304,7 @@ main {
     html, body {
         width: 100%;
         overflow-x: hidden; /* Yatay kaymayı engeller */
+            margin:0;
     }
     
     .baslik-alani {
