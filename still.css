@@ -308,11 +308,15 @@ main {
     }
     
     .baslik-alani {
-        margin: 0;
+     margin: 0 !important;
         width: 100%;
         max-width: 100%;
         padding: 0 15px;
         box-sizing: border-box;
+                    display: flex; /* Ekleme yaptım */
+        justify-content: space-between; /* Ekleme yaptım */
+        align-items: center; /* Ekleme yaptım */
+        position: relative; /* Ekleme yaptım */
     }
 
     .menu-toggle {
@@ -329,7 +333,7 @@ main {
         cursor: pointer;
         order: 2;
         z-index: 101;
-        margin-left: 10px;
+        margin-right: 10px;
     }
 
     .menu-cubugu {
