@@ -2,99 +2,148 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KVKK Formu - Noradark</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        label { display: block; margin-top: 15px; }
-        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
-        .checkbox { margin-top: 20px; }
-        button { background-color: #2ecc71; color: white; padding: 10px 20px; border: none; margin-top: 20px; cursor: pointer; }
-        button:hover { background-color: #27ae60; }
-        .kvkk-links { margin-top: 20px; font-size: 14px; }
-    </style>
-   <!-- CSS -->
+    
+    <!-- CSS & Fontlar -->
     <link rel="stylesheet" href="still.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://www.noradark.shop/kvk-formu" />
+    
+    <!-- Scriptler -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-WPD243Y25V');
+        
+        function scrollToForm() {
+            $('html, body').animate({
+                scrollTop: $("#teklifFormu").offset().top
+            }, 800);
+        }
+    </script>
 </head>
 
-      <header class="baslik-alani">
-        <h1 class="ana-baslik">Noradark </h1>
-   <div class="teklif">
-
- <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
-  
-    </button></div>
+<body>
+    <!-- BAŞLIK ALANI -->
+    <header class="baslik-alani">
+        <h1 class="ana-baslik">Noradark</h1>
+        
+        <!-- Hamburger menü butonu -->
+        <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="teklif">
+            <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
+        </div>
     </header>
-
-
-
+    
     <!-- MENÜ -->
     <nav class="menu-cubugu">
-
         <ul class="menu-listesi">
-           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
+            <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
             <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
             <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
             <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
         </ul>
     </nav>
-  
-<body>
+
+    <!-- İÇERİK -->
     <main>
-    <h1>İletişim ve KVKK Onay Formu</h1>
-
-    <form action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
-        <!-- Gerekli Alanlar -->
-        <label for="name">Ad Soyad *</label>
-        <input type="text" id="name" name="Ad Soyad" required>
-
-        <label for="phone">Telefon Numarası *</label>
-        <input type="tel" id="phone" name="Telefon Numarası" required>
-
-        <label for="details">Proje Detayları (isteğe bağlı)</label>
-        <textarea id="details" name="Proje Detayları" rows="5"></textarea>
-
-        <!-- KVKK Onayı -->
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="KVKK Onayı" required>
-                Kişisel verilerimin <a href="kvkk-aydinlatma.html" target="_blank">KVKK Aydınlatma Metni</a> kapsamında işlenmesine onay veriyorum.
-            </label>
+ <article class="kart kvkk-formu">
+            <h1>Kişisel Verilerin Korunması Aydınlatma Metni</h1>
+            
+            <section class="kvkk-icerik">
+                <h2>1. Veri Sorumlusu</h2>
+                <p><strong>Noradark</strong> olarak kişisel verileriniz 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") kapsamında veri sorumlusu sıfatıyla işlenmektedir.</p>
+                
+                <h2>2. Kişisel Verilerin İşlenme Amacı</h2>
+                <p>Topladığımız veriler;</p>
+                <ul>
+                    <li>Hizmetlerimizin sunulması</li>
+                    <li>Müşteri ilişkileri yönetimi</li>
+                    <li>Yasal yükümlülüklerin yerine getirilmesi</li>
+                    <li>İletişim faaliyetlerinin yürütülmesi</li>
+                </ul>
+                <p>amaçlarıyla işlenmektedir.</p>
+                
+                <h2>3. Toplanan Kişisel Veri Türleri</h2>
+                <div class="veri-tablosu">
+                    <table>
+                        <tr>
+                            <th>Veri Kategorisi</th>
+                            <th>Örnek Veriler</th>
+                        </tr>
+                        <tr>
+                            <td>Kimlik Bilgileri</td>
+                            <td>Ad-soyad, T.C. kimlik no (yasal zorunluluk varsa)</td>
+                        </tr>
+                        <tr>
+                            <td>İletişim Bilgileri</td>
+                            <td>E-posta, telefon, adres</td>
+                        </tr>
+                        <tr>
+                            <td>Müşteri İşlem Bilgileri</td>
+                            <td>Sipariş bilgileri, talep geçmişi</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <h2>4. Verilerin Aktarımı</h2>
+                <p>Verileriniz yalnızca;</p>
+                <ul>
+                    <li>Yasal zorunlulukların gerektirdiği durumlarda</li>
+                    <li>Hizmet sağlayıcılarımızla (sınırlı erişimle)</li>
+                </ul>
+                <p>paylaşılabilir.</p>
+                
+                <h2>5. Veri Güvenliği</h2>
+                <p>Verileriniz teknik ve idari önlemlerle korunmakta olup, 5651 sayılı Kanun uyarınca 2 yıl süreyle saklanır.</p>
+                
+                <h2>6. Haklarınız</h2>
+                <p>KVKK'nın 11. maddesi uyarınca;</p>
+                <ul>
+                    <li>Verilerinizin işlenip işlenmediğini öğrenme</li>
+                    <li>Eksik/yanlış verilerin düzeltilmesini isteme</li>
+                    <li>Silinme veya anonim hale getirilmesini talep etme</li>
+                    <li>İşlenen verilerin aktarıldığı 3. kişileri bilme</li>
+                </ul>
+                <p>haklarına sahipsiniz.</p>
+                
+                <div class="onay-kutusu">
+                    <form id="kvkkOnayForm" method="POST">
+                        <label>
+                            <input type="checkbox" name="kvkk_onay" required>
+                            <strong>Bu aydınlatma metnini okudum, kişisel verilerimin yukarıda belirtilen amaçlarla işlenmesine ve gerekli durumlarda paylaşılmasına açık rıza gösteriyorum.</strong>
+                        </label>
+                        <button type="submit" class="onay-butonu">Onaylıyorum</button>
+                    </form>
+                </div>
+                
+                <div class="iletisim-bilgileri">
+                    <h3>Veri Sorumlusu İletişim Bilgileri:</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:serap.ekin.12@gmail.com">serap.ekin.12@gmail.com</a></p>
+                   
+                </div>
+            </section>
+        </article>
+    </main>
+    
+    <!-- ALT BİLGİ -->
+    <footer class="alt-bilgi">
+        <div class="footer-a">
+            <p>Tüm hakları saklıdır &copy; 2025</p>     
         </div>
-
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="Açık Rıza Onayı" required>
-                <a href="acik-riza.html" target="_blank">Açık Rıza Metni</a>'ni okudum, anladım ve onaylıyorum.
-            </label>
-        </div>
-
-        <!-- Güvenlik Ayarları (formsubmit için) -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://www.siteniz.com/tesekkurler.html">
-
-        <button type="submit">Gönder</button>
-    </form>
-
-    <div class="kvkk-links">
-        <p><strong>Not:</strong> Lütfen formu göndermeden önce Aydınlatma ve Açık Rıza metinlerini okuyunuz.</p>
-    </div>
-</main>
-  <!-- ALT BİLGİ -->
-<footer class="alt-bilgi">
-    <div class="footer-a">
-        <p>Tüm hakları saklıdır &copy; 2025 </p>     
-    </div>
-    <div class="footer-b">
-        <h4>hızlı erişim</h4>
-        <p>
-            <a href="/gizlilik">Gizlilik & teslimat</a>   </p>  
-            <p><a href="/satis-sözleşmesi">Mesafeli satış sözleşmesi</a> </p>
-            <p> <a href="/iptal-iade">İptal & iade koşulları</a></p>
-
-   
-    </div> 
-</footer>
-
+        <div class="footer-b">
+            <h4>hızlı erişim</h4>
+            <p><a href="/gizlilik">Gizlilik & teslimat</a></p>  
+            <p><a href="/satis-sozlesmesi">Mesafeli satış sözleşmesi</a></p>
+            <p><a href="/iptal-iade">İptal & iade koşulları</a></p>
+        </div> 
+    </footer>
 </body>
 </html>
