@@ -264,48 +264,33 @@ Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşte
 </footer>
 
     
- <script>
-// Sayfa yüklendiğinde bu fonksiyon çalışacak
+ <script>// Sayfa yüklendiğinde bu fonksiyon çalışacak
 document.addEventListener('DOMContentLoaded', function() {
 
   // Intersection Observer oluşturuyoruz
-  // Bu gözlemci, elementlerin görünür olup olmadığını takip edecek
   const observer = new IntersectionObserver((entries) => {
-    // Her bir gözlemlenen element için bu fonksiyon çalışacak
     entries.forEach(entry => {
-      // Eğer element görünür alana girdiyse (isIntersecting true ise)
       if (entry.isIntersecting) {
-        // Görünür olan elementin içindeki .karta class'lı elementi bul
         const karta = entry.target.querySelector('.karta');
-        
-        // Eğer .karta elementi varsa hareketi class'ını ekle
         if (karta) karta.classList.add('hareketi');
-        
-        // Animasyon bir kez çalıştıktan sonra gözlemi durdur
         observer.unobserve(entry.target);
       }
     });
   }, { 
-    // Gözlemci ayarları: Elementin %10'u göründüğünde tetikle
     threshold: 0.1 
   });
 
-  // Tüm .kart class'lı elementleri seç ve gözlemciye ekle
   document.querySelectorAll('.kart').forEach(kart => {
     observer.observe(kart);
   });
 
-}); // DOMContentLoaded fonksiyonunun kapanışı
-
-     
-//MENU//
+  //MENU//
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.menu-cubugu');
   
   menuToggle.addEventListener('click', function() {
     mainNav.classList.toggle('active');
     
-    // İkon değişimi (bars ↔ times)
     const icon = this.querySelector('i');
     if (mainNav.classList.contains('active')) {
       icon.classList.remove('fa-bars');
@@ -316,58 +301,53 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  // Form gönderimi
+  document.getElementById('teklifFormu').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const bildirim = document.getElementById('formBildirim');
+    const mesaj = bildirim.querySelector('.bildirim-mesaj');
+    
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(response => {
+      if(response.ok) {
+        bildirim.style.background = '#4CAF50';
+        mesaj.textContent = '✓ Talebiniz başarıyla gönderildi!';
+        form.reset();
+      } else {
+        bildirim.style.background = '#f44336';
+        mesaj.textContent = '✗ Gönderim başarısız. Lütfen tekrar deneyin.';
+      }
+      
+      bildirim.classList.add('goster');
+      setTimeout(() => {
+        bildirim.classList.remove('goster');
+      }, 4000);
+    })
+    .catch(error => {
+      bildirim.style.background = '#f44336';
+      mesaj.textContent = '✗ Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
+      bildirim.classList.add('goster');
+      setTimeout(() => bildirim.classList.remove('goster'), 4000);
+    });
+  });
 
-     //teklif formuna götürme jquery kütüphanesi destekliyor
- function scrollToForm() {
+  // Kapat butonu işlevi
+  document.querySelector('.kapat').addEventListener('click', function() {
+    document.getElementById('formBildirim').classList.remove('goster');
+  });
+
+}); // DOMContentLoaded fonksiyonunun kapanışı
+
+//teklif formuna götürme (jQuery gerektirir)
+function scrollToForm() {
     $('html, body').animate({
         scrollTop: $('#teklifFormu').offset().top
-    }, 1500); // 1.5 saniye
+    }, 1500);
 }
-     
-document.getElementById('teklifFormu').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const bildirim = document.getElementById('formBildirim');
-  const mesaj = bildirim.querySelector('.bildirim-mesaj');
-  
-  // FormSubmit'e gönder
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form)
-  })
-  .then(response => {
-    if(response.ok) {
-      // Başarılı bildirim
-      bildirim.style.background = '#4CAF50';
-      mesaj.textContent = '✓ Talebiniz başarıyla gönderildi!';
-      form.reset();
-    } else {
-      // Hata bildirimi
-      bildirim.style.background = '#f44336';
-      mesaj.textContent = '✗ Gönderim başarısız. Lütfen tekrar deneyin.';
-    }
-    
-    // Bildirimi göster
-    bildirim.classList.add('goster');
-    
-    // 4 saniye sonra gizle
-    setTimeout(() => {
-      bildirim.classList.remove('goster');
-    }, 4000);
-  })
-  .catch(error => {
-    bildirim.style.background = '#f44336';
-    mesaj.textContent = '✗ Bir hata oluştu. Lütfen daha sonra tekrar deneyin.';
-    bildirim.classList.add('goster');
-    setTimeout(() => bildirim.classList.remove('goster'), 4000);
-  });
-});
-
-// Kapat butonu işlevi
-document.querySelector('.kapat').addEventListener('click', function() {
-  document.getElementById('formBildirim').classList.remove('goster');
-});
-});
 </script>
 </body>
 </html>
