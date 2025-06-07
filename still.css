@@ -152,8 +152,8 @@ width: 220px;
 
 .kartb img {
     object-fit: cover;
-    width: 150%;
-        height:300px;
+    width: 200%;
+        height:150px;
     border-radius: 30px; /* Görsel için de border-radius */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
  
@@ -367,7 +367,7 @@ width:20%;
     color: #3498db;
 }
 /* CSS */
-.whatsapp-float {
+.whatsapp {
   position: fixed; /* Ekranda sabit kalır */
   bottom: 20px;    /* Alttan boşluk */
   right: 20px;     /* Sağdan boşluk */
@@ -386,7 +386,7 @@ width:20%;
   text-decoration: none; /* Link alt çizgisini kaldırır */
 }
 
-.whatsapp-float:hover {
+.whatsapp:hover {
   background-color: #128C7E; /* Hover rengi */
 }
 
