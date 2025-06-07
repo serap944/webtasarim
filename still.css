@@ -95,6 +95,11 @@ main {
   opacity: 0;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
+.karta a1 img{
+width:150px;
+        height:200px;
+        
+}
 
 .karta.hareketi {
   transform: translateY(0);
@@ -147,8 +152,8 @@ main {
 
 .kartb img {
     object-fit: cover;
-    width: 100%;
-        height:350px;
+    width: 150%;
+        height:300px;
     border-radius: 30px; /* Görsel için de border-radius */
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
  
