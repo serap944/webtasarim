@@ -358,7 +358,14 @@ padding:1rem 0.5rem;
     text-decoration: underline;
     color: #3498db;
 }
-
+.watsap{
+width: 12px;
+        height: 12px;
+        position:absolute;
+        z-index:1000;
+        margin-right:0;
+        margin-bottom:0;
+}
 
 /* MOBİL UYUMLULUK */
 @media (max-width: 768px) {
