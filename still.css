@@ -314,24 +314,24 @@ width: 220px;
     margin: 0;
     font-size: 16px;
   }
-.kartc{
-        width:100%;
-        margin:auto 1rem;
-        
-
+.kartc {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
+
 .iletisim {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
 }
 
-.iletisim-kutu {
+.iletisim-yazi {
   flex: 1;
   min-width: 200px;
-  padding: 20px;
+  padding: 1.5rem;
   border-radius: 8px;
   background-color: #f0f9ff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -339,22 +339,45 @@ width: 220px;
   transition: transform 0.3s ease;
 }
 
-.iletisim-kutu:hover {
+.iletisim-yazi:hover {
   transform: translateY(-5px);
 }
 
-.iletisim-kutu i {
-  font-size: 32px;
+.iletisim-yazi i {
+  font-size: 2rem;
   color: #2c7be5;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
-.iletisim-kutu p {
-  margin: 0;
-  line-height: 1.5;
-  color: #333;
+.iletisim-yazi p {
+  margin: 0.5rem 0;
+  line-height: 1.4;
 }
 
+.kartd {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+}
+
+.watsap-kutu a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background-color: #25D366;
+  color: white;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.watsap-kutu a:hover {
+  transform: scale(1.1);
+}
 
 /* ALT BİLGİ */
 .alt-bilgi {
@@ -542,8 +565,13 @@ width: 220px;
     flex-direction: column;
   }
   
-  .iletisim-kutu {
+  .iletisim-yazi {
     width: 100%;
+  }
+  
+  .kartd {
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 
