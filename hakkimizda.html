@@ -8,18 +8,13 @@
 <!-- CSS -->
     <link rel="stylesheet" href="still.css">
 <link rel="canonical" href="https://www.noradark.shop/hakkimizda" />
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <!-- Geri kalan HTML kodu aynı kalacak -->
 <body>
     <!-- BAŞLIK ALANI -->
     <header class="baslik-alani">
         <h1 class="ana-baslik">Noradark </h1>
-        
-            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
-    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
-      <i class="fas fa-bars"></i>
-    </button>
    <div class="teklif">
 
  <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
@@ -43,55 +38,53 @@
     <!-- İÇERİK -->
     <main>
 
-     
-  <article class="kart">
-      
-  <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
-  
-    <!-- Kullanıcı Giriş Alanları -->
-    <div class="form-group">
-      <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
-    </div>
-    <div class="form-group">
-      <input type="email" name="E-posta" placeholder="E-posta Adresiniz" required>
-    </div>
-    <div class="form-group">
-      <input type="tel" name="Telefon" placeholder="Telefon Numaranız" required>
-    </div>
-   <div class="form-group">
-      <textarea name="Mesaj" placeholder="Mesajınız" rows="5"></textarea>
-    </div>
-    
-    <!-- KVKK Onayı -->
-    <div class="kvkk-onay">
-      <label>
-        <input type="checkbox" name="kvkk_onay" required>
-        <a href="/kvk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a> ve 
-           <a href="/acik-riza" target="_blank">açık rıza onayı</a>
-          kapsamında 
-        verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
-      </label>
-    </div>
-    
-    <!-- Güvenlik Doğrulama -->
-    <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
-    <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
-    
-    
-    <!-- Gönder Butonu -->
-    <div class="form-group">
-      <button type="submit" class="gonder">Gönder</button>
-    </div>
-  </form>
-  <!-- Bildirim Kutusu -->
-  <div id="formBildirim" class="bildirim">
-    <div class="bildirim-icerik">
-      <span class="kapat">&times;</span>
-      <p class="bildirim-mesaj"></p>
-    </div>
+<article class="karc">
+<div class="kart-k">
+<p>
+sizi yansırtan stillerle web sayfa tasarımı</p>
+<p>
+Amacımız, sadece estetik değil aynı zamanda kullanıcı dostu ve dönüşüm odaklı web çözümleri sunmak.
+</p>
+<p>
+
+</p>
+</div>
+
+</article>
+<article class="karc2">
+  <div>
+    <p class="renkli-yazi">görsel efektler</p>
+    <p class="renkli-yazi">animasyonlar</p>
+  </div>
+  <div>
+    <img src="galeri/lotus.png" alt="resim">
+  </div>
+  <div>
+    <p class="renkli-yazi">responsive tasarımlar</p>
+    <p class="renkli-yazi">geçiş efektler</p>
   </div>
 </article>
-    
+
+<article class="kar3t">
+<div>
+<h3> misyonumuz </h3>
+<p> Teknoloji ve yaratıcılığı birleştirerek, yeni nesil web deneyimleri sunmak. Müşterilerimizin dijital ihtiyaçlarını, özenle ve heyecanla karşılıyoruz  </p>
+</div>
+
+<div>
+<h3> vizyonumuz</h3>
+<p>
+Sektördeki yenilikleri yakından takip ederek, en iyi web tasarım firmalarından biri olmak. Adımızı, kaliteli hizmet ve müşteri memnuniyetiyle duyurmak.
+</p>
+</div>
+</article>
+<article class="kartd">
+  <div class="watsap-kutu">
+    <a href="https://wa.me/905415624921" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</article>
 
 </main>
 <footer class="alt-bilgi">
@@ -108,6 +101,6 @@
    
     </div> 
 </footer>
-<script src="script.js" defer></script>
+
 </body>
 </html>
