@@ -314,12 +314,7 @@ width: 250px;
     margin: 0;
     font-size: 16px;
   }
-.kartc {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-}
+
 
 .iletisim {
   display: flex;
@@ -360,18 +355,116 @@ width: 250px;
   right: 2rem;
   z-index: 100;
 }
-.kar3t 
-{
-display:block;
-padding:1rem;
-height:auto;
-margin:1rem;
-}
-.kar3t div{
-border-radius:1rem;
 
+.karc { 
+  margin: 0;
+  display: flex;
+height: 65vh;
+  align-items: center;
+  justify-content: center;
+    background-image: url("galeri/cicek1.jpg");
+    background-size: cover; /* Resmi ekrana sığdırır */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Tekrar etmesini engeller */
+box-shadow: 5px 7px 12px rgba(0, 0, 0, 0.3 );
 }
+
+.kart-k {width:65%;
+height:50vh;
+justify-content:center;
+text align:center;
+margin: 0rem auto;
 }
+.karc2 {
+  display: flex;
+  width: 80%;
+  height: 35vh;
+border-radius:3rem;
+  background: radial-gradient(circle, white 0%, yellow 100%);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem auto; /* Ortalamak için */
+  padding: 1rem; /* İç boşluk ekler */
+box-shadow:5px 7px 12px rgba(0, 0, 0, 0.3);
+    font-family: cursive;
+    font-size: 22px;
+    color: #333;
+}
+.karc2 .renkli-yazi {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    to right, 
+    #000000,       /* Tam siyah başlangıç */
+    #1a237e 25%,   /* Koyu mavi tonu */
+    #0d47a1 50%,   /* Orta mavi tonu */
+    #1976d2 75%,   /* Açık mavi tonu */
+    #4fc3f7        /* Çok açık mavi (beyazımsı) */
+  );
+  background-size: 200% auto;
+  animation: gradient-text 3s ease infinite alternate;
+}
+.karc2 img {
+  width: 40%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 50%; /* Dairesel görünüm için */
+  
+  /* Dönme animasyonu */
+  animation: spin 8s linear infinite;
+  
+  /* Yumuşak geçiş için */
+  transition: all 0.3s ease;
+}
+
+/* Dönme keyframes */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.karc2 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Metinleri ortalar */
+  justify-content: center; /* Dikeyde ortalar */
+  text-align: center; /* Metinleri yatayda ortalar */
+  flex: 1; /* Eşit genişlik dağılımı */
+}
+.karc2 p {
+  margin: 0.5rem 0; /* Paragraflar arası boşluk */
+}
+
+.kar3t {
+  display: inline-flex;
+  margin: 3rem 0;  /* Fixed margin syntax (was margin-top: 3rem 0) */
+  background: radial-gradient(circle, white 0%, #1ff2d3 100%);
+
+  height: 65vh;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.kar3t div {
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  background: radial-gradient(circle, white 0%, yellow 100%);
+  padding: 2rem;
+margin-right:10px;
+  white-space: normal;
+box-shadow: 5px 7px 12px;
+border-radius:10px;
+}
+
 
 .watsap-kutu a {
   display: flex;
