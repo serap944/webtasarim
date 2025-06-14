@@ -360,6 +360,18 @@ width: 250px;
   right: 2rem;
   z-index: 100;
 }
+.kar3t 
+{
+display:block;
+padding:1rem;
+height:auto;
+margin:1rem;
+}
+.kar3t div{
+border-radius:1rem;
+
+}
+}
 
 .watsap-kutu a {
   display: flex;
@@ -573,6 +585,18 @@ width: 250px;
     bottom: 1rem;
     right: 1rem;
   }
+        .kar3t 
+{
+display:block;
+padding:1rem;
+height:auto;
+margin:1rem;
+}
+.kar3t div{
+border-radius:1rem;
+
+}
+}
 }
 
 /* YAZI ALTÇİZGİ ANİMASYON */
