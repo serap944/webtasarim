@@ -362,7 +362,7 @@ width: 250px;
 height: 65vh;
   align-items: center;
   justify-content: center;
-    background-image: url("galeri/cicek1.jpg");
+    background-image: url("images/cicek1.jpg");
     background-size: cover; /* Resmi ekrana sığdırır */
     background-position: center; /* Resmi ortalar */
     background-repeat: no-repeat; /* Tekrar etmesini engeller */
