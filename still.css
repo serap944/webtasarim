@@ -44,35 +44,42 @@
 }
 
 
+/* MENÜ */
+.menu-cubugu {
+    background-color: #34495e;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Diğer elementlerin üstünde kalmasını sağlar */
+}
 
-        /* MENÜ */
-        .menu-cubugu {
-            background-color: #34495e;
-                z-index:1001;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-        }
+.menu-listesi {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
 
-        .menu-listesi {
-            display: flex;
-            list-style-type: none;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-        }
+.menu-oge {
+    margin: 0 1rem;
+}
 
-        .menu-oge {
-            margin: 0 1rem;
-        }
+.menu-baglantisi {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer; /* Tıklanabilir olduğunu gösterir */
+    padding: 0.5rem 1rem; /* Daha rahat tıklanabilir alan */
+    display: inline-block; /* Padding'in doğru çalışması için */
+}
 
-        .menu-baglantisi {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
+.menu-baglantisi:hover {
+    background-color: #2c3e50; /* Fare üzerine gelince renk değişimi */
+}
 main {
     
     display: flex;
