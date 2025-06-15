@@ -55,7 +55,7 @@
 margin:0;
         max-width:100vw;
     width: 100%;
-    z-index: 1001; /* Diğer elementlerin üstünde kalmasını sağlar */
+   
 }
 
 .menu-listesi {
