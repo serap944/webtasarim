@@ -12,9 +12,14 @@
 </head>
 <!-- Geri kalan HTML kodu aynı kalacak -->
 <body>
-    <!-- BAŞLIK ALANI -->
+      <!-- BAŞLIK ALANI -->
     <header class="baslik-alani">
-        <h1 class="ana-baslik">Noradark </h1>
+        <h1 class="ana-baslik"> <a href="/index">Noradark</a></h1>
+        
+            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
+    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+      <i class="fas fa-bars"></i>
+    </button>
    <div class="teklif">
 
  <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
@@ -28,7 +33,7 @@
     <nav class="menu-cubugu">
 
         <ul class="menu-listesi">
-          <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
+           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
             <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
             <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
             <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
