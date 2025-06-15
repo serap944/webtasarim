@@ -22,7 +22,12 @@
         .ana-baslik {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+                color:white;
         }
+
+a {
+  text-decoration: none;
+}
 
 
         /* Mevcut kart stilini koru + ekstra form stil */
@@ -673,8 +678,8 @@ border-radius:10px;
        
         width: 100%;
     }
-        .kartc{
-
+        .karc{
+margin:0;
                 width:100%;
                 
 }
@@ -691,18 +696,17 @@ border-radius:10px;
     bottom: 1rem;
     right: 1rem;
   }
-        .kar3t 
-{
-display:block;
-padding: 1rem 1rem;
-height:auto;
-
+     .kar3t {
+    display: block;
+    padding: 1rem;
+    margin: 0;
+    height: auto;
 }
-.kar3t div{
-        overflow-wrap: break-word;
-border-radius: 1rem;
-width:100%;
-        
+
+.kar3t div {
+    overflow-wrap: break-word;
+    border-radius: 1rem;
+    width: 100%;
 }
 }
 
