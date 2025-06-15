@@ -694,7 +694,7 @@ border-radius:10px;
         .kar3t 
 {
 display:block;
-padding: 1rem;
+padding: 1rem 1rem;
 height:auto;
 
 }
@@ -702,10 +702,10 @@ height:auto;
         overflow-wrap: break-word;
 border-radius: 1rem;
 width:100%;
-        margin:0;
+        
 }
 }
-}
+
 
 /* YAZI ALTÇİZGİ ANİMASYON */
 @keyframes slideIn {
