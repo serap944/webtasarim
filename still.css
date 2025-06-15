@@ -556,8 +556,10 @@ border-radius:10px;
     /* Genel sayfa düzeni için önemli eklemeler */
     html, body {
         width: 100%;
-        overflow-x: hidden; /* Yatay kaymayı engeller */
-            margin:0;
+       display: block;
+            flex-wrap:wrap;
+            overflow-wrap: break-word;
+      
     }
     
     .baslik-alani {
@@ -692,12 +694,13 @@ border-radius:10px;
         .kar3t 
 {
 display:block;
-padding:1rem;
+padding: 1rem;
 height:auto;
 
 }
 .kar3t div{
-border-radius:1rem;
+        overflow-wrap: break-word;
+border-radius: 1rem;
 width:100%;
         margin:0;
 }
