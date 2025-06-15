@@ -462,10 +462,9 @@ box-shadow:5px 7px 12px rgba(0, 0, 0, 0.3);
 .kar3t div {
   justify-content: center;
   align-items: center;
-  width: 35%;
+  width: 100%;
   background: radial-gradient(circle, white 0%, yellow 100%);
-  padding: 2rem;
-margin-right:10px;
+  padding: 1rem;
   white-space: normal;
 box-shadow: 5px 7px 12px;
 border-radius:10px;
