@@ -5,6 +5,9 @@
             color: #333;
             margin: 0;
             padding: 0;
+                box-sizing: border-box;
+                max-width:100vw;
+                width:100%;
         }
 
         /* BAŞLIK ALANI */
@@ -462,7 +465,7 @@ box-shadow:5px 7px 12px rgba(0, 0, 0, 0.3);
 .kar3t div {
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 40%;
   background: radial-gradient(circle, white 0%, yellow 100%);
   padding: 1rem;
   white-space: normal;
@@ -692,7 +695,7 @@ margin:1rem;
 }
 .kar3t div{
 border-radius:1rem;
-
+width:100%;
 }
 }
 }
