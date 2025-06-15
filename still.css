@@ -8,7 +8,7 @@
                 box-sizing: border-box;
                 max-width:100vw;
                 width:100%;
-                overflow-x: hidden; /* Yatay kaydırmayı engeller */
+             
         }
 
         /* BAŞLIK ALANI */
@@ -51,7 +51,6 @@
 /* MENÜ */
 .menu-cubugu {
     background-color: #34495e;
-    padding: 1rem;
 margin:0;
         max-width:100vw;
     width: 100%;
