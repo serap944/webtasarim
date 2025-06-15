@@ -49,7 +49,7 @@
         .menu-cubugu {
             background-color: #34495e;
             padding: 1rem;
-            position: sticky;
+            position: fixed;
             top: 0;
         }
 
