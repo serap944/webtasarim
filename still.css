@@ -48,6 +48,7 @@
         /* MENÜ */
         .menu-cubugu {
             background-color: #34495e;
+                z-index:1001;
             padding: 1rem;
             position: fixed;
             top: 0;
