@@ -1,281 +1,321 @@
 <!DOCTYPE html>
+
 <html lang="tr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noradark Web Tasarım | Profesyonel Web Sitesi Çözümleri</title>
-    <meta name="description" content="Uygun fiyatlı, profesyonel web tasarım hizmetleri. Yeni açılan firmamızla özel tekliflerden yararlanın.">
-    <meta name="keywords" content="web tasarım, uygun web sitesi, responsive tasarım, e-ticaret sitesi">
-    <meta name="author" content="Noradark">
-    
-    <!-- OpenGraph / Social Media -->
-    <meta property="og:title" content="Noradark Web Tasarım">
-    <meta property="og:description" content="Profesyonel ve uygun fiyatlı web tasarım hizmetleri">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.noradark.shop">
-    <meta property="og:image" content="https://www.noradark.shop/images/resim2.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/images/apple-icon.png">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.noradark.shop">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="still.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-       
-   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Noradark",
-  "image": "https://www.noradark.shop/images/resim2.jpg",
-  "@id": "https://www.noradark.shop#business",
-  "url": "https://www.noradark.shop",
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "09:00",
-    "closes": "18:00"
-  }]
-}
-</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Site - Açılır Menü</title>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- teklifformuna götürmesi için jquerynin scroll animasyonundan destek alıyorum -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-WPD243Y25V"></script>
-<script> // kaç tıklanma var
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WPD243Y25V');
-</script>
+  <!-- Font Awesome (ikonlar için) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- teklifformuna götürmesi için jquerynin scroll animasyonundan destek alıyorum -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+
 </head>
-<!-- Geri kalan HTML kodu aynı kalacak -->
+
 <body>
-    <!-- BAŞLIK ALANI -->
-    <header class="baslik-alani">
-        <h1 class="ana-baslik">Noradark </h1>
-        
-            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
-    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
-      <i class="fas fa-bars"></i>
-    </button>
-   <div class="teklif">
-
- <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
-  
-    </button></div>
-    </header>
-
-
-
-    <!-- MENÜ -->
+  <header>
     <nav class="menu-cubugu">
+      <h2 class="logo"> Noradark </h2>
 
-        <ul class="menu-listesi">
-           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
-            <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
-            <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
-            <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
-        </ul>
+      <div class="teklif">
+
+        <button onclick="scrollToForm()" class="teklif-butonu">aranma talebi</button>
+
+        </button>
+      </div>
+
+      <!-- Hamburger menü -->
+      <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menü -->
+      <ul class="linklerim">
+        <li class="menu-oge"><a href="#">anasayfa</a></li>
+
+        <li class="menu-oge acilir">
+          <button type="button" class="acilir-toggle">
+            hizmetlerimiz <i class="fas fa-chevron-down down-icon"></i>
+          </button>
+          <div class="acilir-pencere">
+            <a href="web-tasarim.html">web tasarım</a>
+            <a href="seo-optimizasyonunun-onemi.html">seo (arama optimizasyonu)</a>
+            <a href="Logo-tasarimi.html">logo tasarımı</a>
+            <a href="ozel-kontrol-paneli.html">Özel kontrol Paneli</a>
+
+          </div>
+        </li>
+
+        <li class="menu-oge"><a href="#">iletişim</a></li>
+        <li class="menu-oge"><a href="#">blog</a></li>
+
+      </ul>
     </nav>
-
-    <!-- İÇERİK -->
-    <main>
-        <article class="kart">
-            <div class="karta"><h2> Web Tasarım Nedir?</h2>
-              
-            <p>      
-Web tasarım, bir web sitesinin görsel ve kullanıcı dostu arayüzünün planlanması,
- tasarlanması ve oluşturulması sürecidir. Bu süreç, renk seçimleri, yazı tipleri, düzen, grafikler, 
- animasyonlar ve kullanıcı etkileşimi gibi unsurları içerir. Web tasarımının temel amacı, hem estetik
-  açıdan çekici hem de işlevsel bir site oluşturarak kullanıcı deneyimini (UX) en üst düzeye çıkarmaktır.
-                 </p>
-            <div class="a1"> <img src="images/mockup-site.png"></div>
-            </div>
-                <div class="kartb">
-                    <img src="images/resim2.jpg" alt="resim2">
-                </div>
-        </article>
-
-        <article class="kart">
-  <div class="karta"> 
-    <h2>Web Tasarımın Temel Bileşenleri</h2>
- <p> Görsel Tasarım (UI - Kullanıcı Arayüzü)    </P>
- <p>
-Renk paleti, tipografi (yazı tipleri), simgeler ve görseller </p>
-
- <p>Düzen (Layout) ve grid sistemleri </p>
-
- <p>Butonlar, menüler ve diğer etkileşimli öğeler </p>
-
- <P>kullanıcı Deneyimi (UX - User Experience) </P>
-
- <p>Kullanıcıların siteyi kolayca gezinebilmesi </p>
-
- <p>Hızlı yüklenme, mobil uyumluluk ve erişilebilirlik </p>
-
- <p>Net ve anlaşılır navigasyon yapısı </p>
-
- <P> (Duyarlı) Tasarım</P>
-
-<p>Web sitesinin farklı cihazlarda (bilgisayar, tablet, telefon) doğru şekilde görüntülenmesi
-
- ve Wireframing</p>
-
-<p>Site yapısının basit şemalarla (wireframe) planlanması</p>
-
-<p>tasarımın prototip halinde test edilmesi</p>
-                </div> 
-         <div class="kartb">
-                    <img src="images/resim3.jpg" alt="resim2">
-                </div>
-        </article>
-
-              <article class="kart">
-                 <div class="karta">
-                  <h2>Açılışa Özel Fırsatları Kaçırmayın</h2>
-            <p>
-           
-Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşterilerinizle iletişim köprünüz.
- Biz de bu köprüyü hızlı, şık ve uygun maliyetle inşa ediyoruz."
-"ÜCRETSİZ Demo İsteyin → 7 Gün Deneyin!
-"Yeni Açıldık! Fırsatları Kaçırmayın 🎁"
-                 </p>
-                 </div>
-        </article>
-
-              <article class="kart">
-                 <div class="karta">
-            <h2> Biz Kimiz?</h2>
-         <p>
-
-🔹 Yeni kurulduk, bu yüzden:
-✔ Fiyatlar rakiplerden çok daha uygun!
-✔ Sizinle birlikte büyümek istiyoruz.
-✔ İlk müşterilerimize özel esnek çözümler sunuyoruz.
-
-                 </p></div>
-        </article>
-        
-     
-     
-  <article class="kart">
-      
-  <form class="teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com" method="POST">
-  
-    <!-- Kullanıcı Giriş Alanları -->
-    <div class="form-group">
-      <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
-    </div>
-    <div class="form-group">
-      <input type="email" name="E-posta" placeholder="E-posta Adresiniz" required>
-    </div>
-    <div class="form-group">
-      <input type="tel" name="Telefon" placeholder="Telefon Numaranız" required>
-    </div>
-   <div class="form-group">
-      <textarea name="Mesaj" placeholder="Mesajınız" rows="5"></textarea>
-    </div>
-    
-    <!-- KVKK Onayı -->
-    <div class="kvkk-onay">
-      <label>
-        <input type="checkbox" name="kvkk_onay" required>
-        <a href="/kvk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a> ve 
-           <a href="/acik-riza" target="_blank">açık rıza onayı</a>
-          kapsamında 
-        verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
-      </label>
-    </div>
-    
-    <!-- Güvenlik Doğrulama -->
-    <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
-    <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
-    
-    
-    <!-- Gönder Butonu -->
-    <div class="form-group">
-      <button type="submit" class="gonder">Gönder</button>
-    </div>
-  </form>
-  <!-- Bildirim Kutusu -->
-  <div id="formBildirim" class="bildirim">
-    <div class="bildirim-icerik">
-      <span class="kapat">&times;</span>
-      <p class="bildirim-mesaj"></p>
-    </div>
-  </div>
-</article>
-    
-
-    
-        <article class="kart">
-            <div class="karta">
-            <h2>Web Tasarım Hizmetlerimiz</h2>
-            <p>
-            <p>Profesyonel web tasarım çözümleri sunuyoruz:</p>
-            
-              <p>   Kurumsal Web Siteleri </p>
-               <p>   E-ticaret Sistemleri </p> 
-               <p>  Responsive Tasarım </p>  
-               <p>  SEO Optimizasyonu </p> 
-           </div>
-        </article>
-             
-        <article class="kart">
-            <div class="karta">
-            <h2>  Fırsatlar </h2>
-    <p>Yeni Açıldığımız İçin Cömertiz! </p>
-  <p>   🎯  ÜCRETSİZ Demo + 7 Gün Ücretsiz Kullanım!</p>      
- <p> → "Beğenmezseniz ücret almıyoruz!" </p> 
-
-<h3>    </h3>İlk 2 Hafta ÜCRETSİZ Güncelleme!
-  <p> 🎯→ "Aklınıza sonradan gelenleri ekliyoruz."   </p> 
-
- <h3>  🎯İlk 10 Müşteriye Özel:  </h3> 
- <p>✔ Tasarım 
-    + 1 Yıl Ücretsiz Destek!"   </p></p> 
+  </header>
 
 
-   </div>
-        </article>
-        
-<article class="kartd">
-  <div class="watsap-kutu">
-    <a href="https://wa.me/905415624921" target="_blank">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
-</article>
-        
-    </main>
+  <main class="anaicerik">
+    <article class="banner">
 
-<!-- ALT BİLGİ -->
-<footer class="alt-bilgi">
-    <div class="footer-a">
-        <p>Tüm hakları saklıdır &copy; 2025 </p>     
-    </div>
-    <div class="footer-b">
-        <h4>hızlı erişim</h4>
+    </article>
+
+    <article class="kart">
+      <div class="karta">
+        <h2>Web Tasarım Nedir?</h2>
         <p>
-            <a href="/gizlilik">Gizlilik & teslimat</a>   </p>  
-            <p><a href="/satis-sözleşmesi">Mesafeli satış sözleşmesi</a> </p>
-            <p> <a href="/iptal-iade">İptal & iade koşulları</a></p>
+          Web tasarım, bir web sitesinin görsel ve kullanıcı dostu arayüzünün planlanması,
+          tasarlanması ve oluşturulması sürecidir. Bu süreç; renk seçimleri, yazı tipleri, düzen, grafikler,
+          animasyonlar ve kullanıcı etkileşimi gibi unsurları içerir. Temel amaç, estetik açıdan çekici ve
+          işlevsel bir site oluşturarak kullanıcı deneyimini (UX) en üst düzeye çıkarmaktır.
+        </p>
+        <img class="icerik-resim" src="images/arama.svg" alt="Web Tasarım Görseli">
 
-   
-    </div> 
-</footer>
+      </div>
 
-    
-<script src="script.js" defer></script>
+      <div class="kartb">
+        <img src="images/yazilim1.jpg" alt="Yan Görsel">
+      </div>
+    </article>
+
+    <article class="kart arkarenk">
+      <div class="karta">
+        <h2>Web Tasarımın Temel Bileşenleri</h2>
+        <p> Görsel Tasarım (UI - Kullanıcı Arayüzü) </P>
+        <p>
+          Renk paleti, tipografi (yazı tipleri), simgeler ve görseller </p>
+
+        <p>Düzen (Layout) ve grid sistemleri </p>
+
+        <p>Butonlar, menüler ve diğer etkileşimli öğeler </p>
+
+        <P>kullanıcı Deneyimi (UX - User Experience) </P>
+
+        <p>Kullanıcıların siteyi kolayca gezinebilmesi </p>
+
+        <p>Hızlı yüklenme, mobil uyumluluk ve erişilebilirlik </p>
+
+        <p>Net ve anlaşılır navigasyon yapısı </p>
+
+        <P> (Duyarlı) Tasarım</P>
+
+        <p>Web sitesinin farklı cihazlarda (bilgisayar, tablet, telefon) doğru şekilde görüntülenmesi
+
+          ve Wireframing</p>
+
+        <p>Site yapısının basit şemalarla (wireframe) planlanması</p>
+
+        <p>tasarımın prototip halinde test edilmesi</p>
+      </div>
+      <div class="kartb">
+        <img src="images/webtasarim.png" alt="resim2">
+      </div>
+    </article>
+
+
+    <h1 style="color: blueviolet; text-align: center; margin-top: 3rem;"> Websitede Olması Gerekenler</h1>
+    <section class="gridkutusu">
+
+      <div class="kartx">
+        <img src="images/grafik-tasarim.svg">
+        <h3>grafik tasarım</h3>
+      </div>
+      <div class="kartx">
+        <img src="images/mobil-uyum.svg">
+        <h3>mobil cihazlara uyumluluk</h3>
+      </div>
+      <div class="kartx">
+        <img src="images/seo.svg">
+        <h3>Seo Dostu</h3>
+      </div>
+      <div class="kartx">
+        <img src="images/grafik-tasarim.svg">
+        <h3>grafik tasarımları</h3>
+      </div>
+      <div class="kartx">
+        <img src="images/teknik-destek.svg">
+        <h3>teknik-destek ve panel eğitimi</h3>
+      </div>
+
+    </section>
+
+
+
+    <section class="kart arkarenk">
+
+      <form class="karta teklif-formu" id="teklifFormu" action="https://formsubmit.co/serap.ekin.12@gmail.com"
+        method="POST">
+
+        <!-- Kullanıcı Giriş Alanları -->
+        <h2>Teklif Formu</h2>
+        <div class="form-group">
+          <input type="text" name="Ad Soyad" placeholder="Adınız Soyadınız" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="E-posta" placeholder="E-posta Adresiniz" required>
+        </div>
+        <div class="form-group">
+          <input type="tel" name="Telefon" placeholder="Telefon Numaranız" required>
+        </div>
+        <div class="form-group">
+          <textarea name="Mesaj" placeholder="Mesajınız" rows="5"></textarea>
+        </div>
+
+        <!-- KVKK Onayı -->
+        <div class="kvkk-onay">
+          <label>
+            <input type="checkbox" name="kvkk_onay" required>
+            <a href="/kvk-formu" target="_blank">Kişisel Verilerin Korunması Kanunu</a> ve
+            <a href="/acik-riza" target="_blank">açık rıza onayı</a>
+            kapsamında
+            verilerimin işlenmesini ve tarafıma iletişime geçilmesini kabul ediyorum.
+          </label>
+        </div>
+
+        <!-- Güvenlik Doğrulama -->
+        <input type="hidden" name="_captcha" value="false"> <!-- Basit spam koruması -->
+        <input type="text" name="_honey" style="display:none"> <!-- Spam bot tuzak alanı -->
+
+
+        <!-- Gönder Butonu -->
+        <div class="form-group">
+          <button type="submit" class="gonder">Gönder</button>
+        </div>
+      </form>
+      <!-- Bildirim Kutusu -->
+      <div id="formBildirim" class="bildirim">
+        <div class="bildirim-icerik">
+          <span class="kapat">&times;</span>
+          <p class="bildirim-mesaj"></p>
+        </div>
+      </div>
+
+      <div class="kartb">
+        <h2 style="margin-bottom: 1rem; border-bottom:2px solid green;">Açılışa Özel Fırsatları Kaçırmayın</h2>
+        <p>
+          Web tasarım, markanızın dijital yüzüdür! İnternetteki vitrininiz, müşterilerinizle iletişim köprünüz.
+          Biz de bu köprüyü hızlı, şık ve uygun maliyetle inşa ediyoruz."
+          "ÜCRETSİZ Demo İsteyin → 7 Gün Deneyin!
+          "Yeni Açıldık! Fırsatları Kaçırmayın 🎁"
+        </p>
+      </div>
+    </section>
+
+    <article class="kart">
+      <div class="kartc">
+        <h2 style="font-size:2.3rem;  font-family:'Indie Flower', cursive ;"> Biz Kimiz?</h2>
+        <p style="font-size: 1.2rem; font-family:'Indie Flower', cursive">
+          🔹 Yeni kurulduk, bu yüzden:
+          <br>✔ Fiyatlar rakiplerden çok daha uygun!
+          <br>✔ Sizinle birlikte büyümek istiyoruz.
+          <br>✔ İlk müşterilerimize özel esnek çözümler sunuyoruz.
+
+        </p>
+      </div>
+
+      <div class="kartd">
+        <img src="images/yazilim2.png" alt="website">
+      </div>
+    </article>
+
+    <section class="kutu2">
+      <h2>Web Tasarım Hizmetlerimiz</h2>
+
+      <!-- Slider alanı -->
+      <div class="flexkutusu1" id="slider">
+        <div class="kartw">
+          <img src="images/blog1.jpg" alt="web sitesi">
+          <h3> Kurumsal Web Sitesi Nedir? </h3>
+          <h3> Kurumsal Web Sitesi Nedir? </h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+
+
+        <div class="kartw">
+          <img src="images/blog7.jpg" alt="web sitesi">
+          <h3> E-ticaret Sistemleri Nedir? </h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+
+        <div class="kartw">
+          <img src="images/blog2.jpg" alt="web sitesi">
+          <h3> Responsive Tasarım Nedir?</h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+
+        <div class="kartw">
+          <img src="images/blog3.jpg" alt="web sitesi">
+          <h3> SEO Optimizasyonu Nedir? </h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+
+        <div class="kartw">
+          <img src="images/blog4.jpg" alt="web sitesi">
+          <h3> kolay CMS kontrol sistemi Nedir?</h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+
+        <div class="kartw">
+          <img src="images/blog5.jpg" alt="web sitesi">
+          <h3> logo tasarımı</h3>
+          <button class="button1 arkarenk"> daha fazlası </button>
+        </div>
+      </div>
+
+      <!-- Oklar -->
+      <span class="okyonu sol" id="prev"><i class="fas fa-chevron-left"></i></span>
+      <span class="okyonu sag" id="next"><i class="fas fa-chevron-right"></i></span>
+
+      <!-- Dots navigasyonu -->
+      <div class="dots" id="dots-container"></div>
+    </section>
+
+    <section class="kart">
+      <div class="karta">
+        <h2> Fırsatlar </h2>
+        <p>Yeni Açıldığımız İçin Cömertiz! </p>
+        <p> 🎯 ÜCRETSİZ Demo + 7 Gün Ücretsiz Kullanım!</p>
+        <p> → "Beğenmezseniz ücret almıyoruz!" </p>
+
+        <h3> İlk 2 Hafta ÜCRETSİZ Güncelleme! </h3>
+        <p> 🎯→ "Aklınıza sonradan gelenleri ekliyoruz." </p>
+
+        <h3> 🎯İlk 10 Müşteriye Özel: </h3>
+        <p>✔ Tasarım
+          + 1 Yıl Ücretsiz Destek!" </p>
+
+
+      </div>
+    </section>
+
+    <footer class="alt-bilgi">
+      <div class="footer-icerik">
+        <div class="footer-bolum">
+          <h4>Hızlı Erişim</h4>
+          <p><i class="fas fa-info-circle"></i><a href="hakkimizda">Hakkımızda</a></p>
+          <p><i class="fas fa-calendar-check"></i><a
+              href="https://wa.me/905372783985?text=Merhaba, bilgi almak istiyorum.">Randevu Al</a></p>
+          <p><i class="fas fa-phone-alt"></i><a href="iletisim">İletişime Geç</a></p>
+        </div>
+
+        <div class="footer-bolum">
+          <h4>İletişim</h4>
+          <p><i class="fas fa-phone"></i> (0541) 562 49 21 </p>
+          <p><i class="fas fa-envelope"></i> serap.ekin.12@gmail.com</p>
+        </div>
+      </div>
+
+
+    </footer>
+
+  </main>
+
 </body>
+
 </html>

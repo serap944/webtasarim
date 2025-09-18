@@ -1,0 +1,822 @@
+   * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   body {
+     font-family: Arial, Helvetica, sans-serif;
+     overflow-x: hidden;
+     /* taşmayı engeller */
+     max-width: 100%;
+     /* genişlik ekranı geçmesin */
+     overflow-y: scroll;
+   }
+
+   header {
+     margin: 0;
+     padding: 0;
+   }
+
+   .menu-cubugu {
+     display: flex;
+     position: fixed;
+     width: 100%;
+     top: 0;
+     z-index: 999;
+     justify-content: space-around;
+     align-items: center;
+     padding: 0.6rem 1rem;
+     background: linear-gradient(to right, #817aff, #434085);
+     color: white;
+   }
+
+
+   /* Buton stilleri */
+   .teklif-butonu {
+     background-color: rgb(129, 12, 183);
+     border: 7px solid rgb(72, 0, 105);
+     color: white;
+     font-weight: 700;
+     border: none;
+     padding: 10px 15px;
+     border-radius: 4px;
+     cursor: pointer;
+   }
+
+   .logo {
+     font-weight: 800;
+     font-size: 1.8rem;
+     color: #060077;
+     font-style: italic;
+
+   }
+
+   /* Hamburger menü butonu */
+   .menu-toggle {
+     display: none;
+     background: none;
+     border: 0;
+     color: white;
+     font-size: 1.5rem;
+     cursor: pointer;
+     padding: 6px;
+   }
+
+   /* Menü listesi */
+   .linklerim {
+     display: flex;
+     gap: 0.5rem;
+     align-items: center;
+     list-style: none;
+     font-weight: 700;
+   }
+
+   .menu-oge {
+     position: relative;
+   }
+
+   .menu-oge a,
+   .menu-oge>button {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.35rem;
+     padding: 7px 12px;
+     text-decoration: none;
+     color: white;
+     font-size: 1.1rem;
+     background: none;
+     border: 0;
+     cursor: pointer;
+   }
+
+   .menu-oge a:hover,
+   .menu-oge>button:hover {
+     color: #ddd;
+   }
+
+   /* Ok ikonu */
+   .acilir>button .down-icon {
+     font-size: 0.8rem;
+     transition: transform .2s ease;
+   }
+
+   .acilir.open>button .down-icon {
+     transform: rotate(180deg);
+   }
+
+   /* Açılır pencere - masaüstü */
+   .acilir-pencere {
+     display: none;
+     position: absolute;
+     top: 100%;
+     /* tam altına yapış */
+     left: 0;
+     min-width: 200px;
+     background-color: #7c76f5;
+     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+     border-radius: 6px;
+     z-index: 50;
+   }
+
+   .acilir-pencere a {
+     display: block;
+     padding: 10px 12px;
+     color: white;
+     text-decoration: none;
+     font-weight: 600;
+   }
+
+   .acilir-pencere a:hover {
+     background: rgba(0, 0, 0, 0.1);
+   }
+
+
+
+
+   .teklif-formu {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 1rem;
+     width: 100%;
+
+     border-radius: 10px;
+     color: white;
+
+   }
+
+
+   .form-group {
+     width: 70%;
+
+   }
+
+   .teklif-formu label {
+     display: block;
+
+     font-weight: 500;
+   }
+
+   .teklif-formu input,
+   .teklif-formu textarea {
+     width: 100%;
+     padding: 10px 12px;
+     border: 2px solid #ddd;
+     border-radius: 6px;
+     font-size: 16px;
+     transition: all 0.3s;
+     background-color: rgba(255, 255, 255, 0.9);
+   }
+
+   .teklif-formu input:focus,
+   .teklif-formu textarea:focus {
+     border-color: #4CAF50;
+     outline: none;
+     box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+   }
+
+   .kvkk-onay {
+     display: flex;
+     align-items: center;
+
+     margin: 1rem 0;
+   }
+
+   .kvkk-onay input[type="checkbox"] {
+     width: auto;
+     margin: 0;
+   }
+
+   .kvkk-onay a {
+     color: #4CAF50;
+     text-decoration: none;
+     font-weight: 600;
+   }
+
+   .kvkk-onay a:hover {
+     text-decoration: underline;
+   }
+
+   .gonder {
+     background-color: #4CAF50;
+     color: white;
+     padding: 14px 20px;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 18px;
+     font-weight: 600;
+     width: 100%;
+     transition: background-color 0.3s;
+   }
+
+   .gonder:hover {
+     background-color: #45a049;
+   }
+
+   .bildirim {
+     position: fixed;
+     top: -100px;
+     left: 50%;
+     transform: translateX(-50%);
+     background: #4CAF50;
+     color: white;
+     padding: 20px 30px;
+     border-radius: 5px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+     z-index: 1000;
+     opacity: 0;
+     transition: all 0.5s ease;
+     display: flex;
+     align-items: center;
+   }
+
+   .bildirim.goster {
+     opacity: 1;
+     top: 20px;
+   }
+
+   .bildirim-icerik {
+     position: relative;
+   }
+
+   .anaicerik {
+     margin: 0;
+     padding: 0;
+   }
+
+
+   .kart {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: white;
+     margin: 0;
+     height: 75vh;
+     overflow: hidden;
+   }
+
+   .arkarenk {
+     background-color: #ddaae6;
+
+   }
+
+   /* Sol içerik */
+   .karta {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 70%;
+     padding: 1.5rem;
+     opacity: 0;
+     transform: translateX(-100%);
+     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+     position: relative;
+     /* sabit olmasın, akışta kalsın */
+   }
+
+   .karta.hareketi {
+     opacity: 1;
+     transform: translateX(0);
+   }
+
+   /* Başlık animasyonlu çizgi */
+   .karta.hareketi h2 {
+     position: relative;
+     display: inline-block;
+     padding-bottom: 8px;
+     animation: fadeIn 0.5s ease-out forwards;
+   }
+
+   .karta.hareketi h2::after {
+     content: '';
+     position: absolute;
+     left: 0;
+     bottom: 12px;
+     height: 2px;
+     width: 0;
+     background-color: #3498db;
+     animation: underlineExpand 0.5s 0.5s ease-out forwards;
+   }
+
+   /* Paragraf animasyonu */
+   .karta.hareketi p {
+     animation: fadeIn 0.5s ease-out forwards;
+   }
+
+   @keyframes fadeIn {
+     from {
+       opacity: 0;
+       transform: translateY(10px);
+     }
+
+     to {
+       opacity: 1;
+       transform: translateY(0);
+     }
+   }
+
+   @keyframes underlineExpand {
+     from {
+       width: 0;
+       left: 50%;
+     }
+
+     to {
+       width: 100%;
+       left: 0;
+     }
+   }
+
+   .icerik-resim {
+     display: flex;
+     justify-content: center;
+
+     max-width: 75%;
+     height: 200px;
+   }
+
+   .kartb {
+     width: 30%;
+     padding: 1rem;
+     opacity: 0;
+     /* başlangıçta görünmez */
+     transform: translateX(100%);
+     /* sağdan gelsin */
+     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+     position: relative;
+     /* fixed değil */
+   }
+
+   .kartb.hareketi {
+     opacity: 1;
+     transform: translateX(0);
+   }
+
+   .kartb img {
+     max-width: 100%;
+     min-width: 80%;
+     max-height: 100%;
+     object-fit: cover;
+     border-radius: 30px;
+   }
+
+   .kartc {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     width: 40%;
+     height: 100%;
+     padding: 0.2rem;
+     opacity: 0;
+     /* başlangıçta görünmez */
+     transform: translateY(100%);
+     /* sağdan gelsin */
+     transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+     position: relative;
+     /* fixed değil */
+     margin-left: 0;
+
+   }
+
+   .kartd {
+     width: 60%;
+     height: 100%;
+   }
+
+   .kartd img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: cover;
+   }
+
+   .kartc.chareketi {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+   .gridkutusu {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 15px;
+     margin: 3rem 1rem 5rem 1rem;
+     padding: 1rem;
+     justify-items: center;
+     align-items: start;
+     height: 55vh;
+   }
+
+   .kartx {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     box-shadow: 0 7px 12px rgba(0, 0, 0, 0.2);
+     justify-content: flex-start;
+     padding: 10px;
+     width: 100%;
+     /* grid hücresini tamamen doldurur */
+     height: 100%;
+     /* tüm hücreyi kapsar */
+     gap: 10px;
+     box-sizing: border-box;
+   }
+
+   .kartx img {
+     width: auto;
+     height: 65%;
+     object-fit: cover;
+   }
+
+   /* Slider container */
+   /* Slider container */
+   .kutu2 {
+     position: relative;
+     overflow: hidden;
+     margin: 2rem auto;
+     padding: 1rem;
+     max-width: 1200px;
+   }
+
+   .kutu2 h2 {
+     text-align: center;
+     margin-bottom: 2rem;
+     color: #333;
+     font-size: 2.2rem;
+   }
+
+   .flexkutusu1 {
+     display: flex;
+     gap: 2rem;
+     transition: transform 0.6s ease;
+     margin: 0;
+     padding: 0;
+   }
+
+   .kartw {
+     flex: 0 0 calc((100% - (2rem * 2)) / 3);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     box-shadow: 0 7px 12px rgba(150, 2, 138, 0.4);
+     border-radius: 2rem;
+     height: 60vh;
+     background-color: #3498db;
+     margin: 10px 0;
+     overflow: hidden;
+   }
+
+   /* Görsel ayarı */
+   .kartw img {
+     width: 100%;
+     height: 75%;
+     object-fit: cover;
+     border-radius: 2rem 2rem 0 0;
+   }
+
+   .kartw h3 {
+     padding: 1rem;
+     color: white;
+     text-align: center;
+     font-size: 1.2rem;
+   }
+
+   .button1 {
+     padding: 9px 16px;
+     border-radius: 9px;
+     border: none;
+     margin-bottom: 1rem;
+     background-color: rgba(122, 8, 133, 0.7);
+     color: white;
+     font-weight: bold;
+     cursor: pointer;
+     transition: all 0.3s ease;
+   }
+
+   .button1:hover {
+     background-color: rgba(191, 124, 197, 0.7);
+     transform: scale(1.05);
+   }
+
+   /* Oklar */
+   .okyonu {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     background: rgba(122, 8, 133, 0.7);
+     color: #fff;
+     width: 40px;
+     height: 40px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     cursor: pointer;
+     font-size: 20px;
+     z-index: 10;
+     transition: background 0.3s;
+   }
+
+   .okyonu:hover {
+     background: rgba(122, 8, 133, 1);
+   }
+
+   .okyonu.sol {
+     left: 20px;
+   }
+
+   .okyonu.sag {
+     right: 20px;
+   }
+
+   /* Dots (navigasyon noktaları) */
+   .dots {
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+   }
+
+   .dot {
+     width: 12px;
+     height: 12px;
+     margin: 0 5px;
+     background-color: #bbb;
+     border-radius: 50%;
+     cursor: pointer;
+     transition: background-color 0.3s;
+   }
+
+   .dot.active {
+     background-color: rgba(122, 8, 133, 0.7);
+   }
+
+
+
+
+
+
+   /* Basitleştirilmiş Footer */
+   .alt-bilgi {
+     background: #2c3e50;
+     color: white;
+     padding: 30px 0 15px;
+     margin-top: auto;
+   }
+
+   .footer-icerik {
+     display: flex;
+     justify-content: space-between;
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 0 20px;
+     flex-wrap: wrap;
+   }
+
+   .footer-bolum {
+     flex: 1;
+     min-width: 250px;
+     margin-bottom: 20px;
+   }
+
+   .footer-bolum h4 {
+     font-size: 18px;
+     margin-bottom: 15px;
+     color: white;
+   }
+
+   .footer-bolum p {
+     margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+   }
+
+   .footer-bolum a {
+     color: #ddd;
+     text-decoration: none;
+     display: flex;
+     align-items: center;
+   }
+
+   .footer-bolum a:hover {
+     color: white;
+   }
+
+   .footer-bolum i {
+     margin-right: 10px;
+     color: #6a11cb;
+     width: 20px;
+   }
+
+
+   /* Responsive tasarım */
+   @media (max-width: 1024px) {
+     .menu-toggle {
+       display: block;
+     }
+
+     .linklerim {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 75%;
+       max-width: 320px;
+       height: 100%;
+       background: linear-gradient(to right, #7c76f5, #434085);
+       transform: translateX(-110%);
+       flex-direction: column;
+       align-items: stretch;
+       padding-top: 3rem;
+       transition: transform .3s ease;
+       z-index: 999;
+     }
+
+     .linklerim.aktiflik {
+       transform: translateX(0);
+     }
+
+     .menu-oge {
+       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+     }
+
+     .menu-oge a,
+     .menu-oge>button {
+       font-size: 1.2rem;
+       padding: 14px 18px;
+       width: 100%;
+       text-align: left;
+     }
+
+     .acilir-pencere {
+       position: relative;
+       top: 0;
+       left: 0;
+       display: none;
+       background: none;
+       box-shadow: none;
+       min-width: 100%;
+     }
+
+     .acilir.open .acilir-pencere {
+       display: block;
+     }
+
+     .acilir-pencere a {
+       padding-left: 32px;
+     }
+
+     .kartw {
+       flex: 0 0 calc((100% - 2rem) / 2);
+       /* 2 sütun */
+     }
+
+   }
+
+
+   /* Masaüstü hover ile açma */
+   @media (max-width: 768px) {
+
+     .anaicerik {
+       margin-top: 60px;
+     }
+
+     .kart {
+       display: flex;
+       flex-direction: column;
+       height: auto;
+       gap: 0.5rem;
+       padding: 0.1rem;
+       flex: 0 0 100%;
+
+     }
+
+     .karta {
+       flex: 0 0 100%;
+       width: 100%;
+     }
+
+     .kartb {
+       flex: 0 0 100%;
+       width: 100%;
+     }
+
+
+
+     .kartb img {
+       min-width: 100%;
+       max-height: 300px;
+       height: auto;
+     }
+
+     .gridkutusu {
+       display: grid;
+       grid-template-columns: 1fr;
+       height: auto;
+     }
+
+
+     .kartw {
+       flex: 0 0 100%;
+       width: 100%;
+     }
+
+   }
+
+   @media (max-width: 480px) {
+
+     .anaicerik {
+       margin-top: 60px;
+     }
+
+     .kart {
+       display: flex;
+       flex-direction: column;
+       height: auto;
+       gap: 0.5rem;
+       padding: 0.1rem;
+       flex: 0 0 100%;
+
+     }
+
+     .karta {
+       flex: 0 0 100%;
+       width: 100%;
+     }
+
+     .kartb {
+       flex: 0 0 100%;
+       width: 100%;
+     }
+
+
+
+     .kartb img {
+       min-width: 100%;
+       max-height: 300px;
+       height: auto;
+     }
+
+     .gridkutusu {
+       display: grid;
+       grid-template-columns: 1fr;
+       height: auto;
+     }
+
+     .kartw {
+       flex: 0 0 100%;
+       /* 1 sütun */
+       height: auto;
+       min-height: 400px;
+     }
+
+     .kartw img {
+       height: 250px;
+     }
+
+     .okyonu {
+       width: 35px;
+       height: 35px;
+       font-size: 16px;
+     }
+
+     .okyonu.sol {
+       left: 10px;
+     }
+
+     .okyonu.sag {
+       right: 10px;
+     }
+
+
+     .kartc {
+       flex: 0 0 100%;
+       width: 100%;
+       height: auto;
+     }
+
+     .kartd {
+       width: 100%;
+       height: auto;
+     }
+
+     .kartd img {
+       max-width: 100%;
+       height: auto;
+     }
+
+     .kartw {
+       min-height: 350px;
+     }
+
+     .kartw img {
+       height: 200px;
+     }
+
+     .button1 {
+       padding: 8px 14px;
+       font-size: 0.9rem;
+     }
+
+   }

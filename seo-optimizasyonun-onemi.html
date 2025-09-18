@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Site - Açılır Menü</title>
+
+  <!-- Font Awesome (ikonlar için) -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- teklifformuna götürmesi için jquerynin scroll animasyonundan destek alıyorum -->
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+
+    
+</head>
+<body>
+  <header>
+    <nav class="menu-cubugu">
+      <h2 class="logo" >    Noradark </h2>
+
+         <div class="teklif">
+
+ <button onclick="scrollToForm()" class="teklif-butonu">aranma talebi</button>
+  
+    </button></div>
+
+      <!-- Hamburger menü -->
+      <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menü -->
+      <ul class="linklerim">
+        <li class="menu-oge"><a href="#" >anasayfa</a></li>
+
+        <li class="menu-oge acilir">
+          <button type="button" class="acilir-toggle">
+            hizmetlerimiz <i class="fas fa-chevron-down down-icon"></i>
+          </button>
+          <div class="acilir-pencere">
+            <a href="web-tasarim.html">web tasarım</a>
+            <a href="seo-optimizasyonunun-onemi.html">seo (arama optimizasyonu)</a>
+            <a href="Logo-tasarimi.html">logo tasarımı</a>
+             <a href="ozel-kontrol-paneli.html">Özel kontrol Paneli</a>
+           
+          </div>
+        </li>
+
+        <li class="menu-oge"><a href="#">iletişim</a></li>
+         <li class="menu-oge"><a href="#">blog</a></li>
+
+      </ul>
+    </nav>
+  </header>
+  
+
+  <main class="anaicerik">
+    <article class="banner">
+
+    </article>
+  <h1>SEO (Arama Optimizasyonu)</h1>
+  <p>
+    SEO (Search Engine Optimization), web sitelerinin arama motorlarında daha
+    görünür olmasını sağlayan dijital pazarlama yöntemlerinin bütünüdür. Doğru
+    SEO stratejileriyle hazırlanan bir site, Google gibi arama motorlarında üst
+    sıralara çıkarak daha fazla potansiyel müşteriye ulaşabilir. Böylece hem
+    organik trafik artar hem de marka bilinirliği güçlenir.
+  </p>
+  <p>
+    SEO çalışmaları; teknik optimizasyon, anahtar kelime planlaması, içerik
+    düzenlemesi ve backlink stratejilerini kapsar. Düzenli olarak yapılan
+    SEO iyileştirmeleri sayesinde siteniz, yalnızca kısa vadeli değil uzun vadeli
+    bir başarı da elde eder. Bu da reklam bütçesinden tasarruf etmenize olanak tanır.
+  </p>
+  <p>
+    Günümüzde internet kullanıcılarının büyük bir kısmı, ihtiyaç duydukları
+    hizmet ve ürünleri arama motorları üzerinden aramaktadır. Bu nedenle SEO,
+    işletmelerin hedef kitlelerine ulaşmasında vazgeçilmez bir araçtır.
+    Arama sonuçlarında görünürlüğünüzü artırarak, rakiplerinizin önüne geçebilir
+    ve sürdürülebilir bir dijital büyüme sağlayabilirsiniz.
+  </p>
+</main>
+           <footer class="alt-bilgi">
+        <div class="footer-icerik">
+            <div class="footer-bolum">
+                <h4>Hızlı Erişim</h4>
+              <p><i class="fas fa-info-circle"></i><a href="hakkimizda">Hakkımızda</a></p>
+                <p><i class="fas fa-calendar-check"></i><a href="https://wa.me/905372783985?text=Merhaba, bilgi almak istiyorum.">Randevu Al</a></p>
+                <p><i class="fas fa-phone-alt"></i><a href="iletisim">İletişime Geç</a></p>
+            </div>
+            
+            <div class="footer-bolum">
+                <h4>İletişim</h4>
+                <p><i class="fas fa-phone"></i> (0541) 562 49 21 </p>
+                <p><i class="fas fa-envelope"></i> serap.ekin.12@gmail.com</p>
+            </div>
+        </div>
+        
+    
+    </footer>
