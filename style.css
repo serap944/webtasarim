@@ -616,7 +616,7 @@
    }
 
 
-   .anaicerikSeo {
+   .icerikSeo {
      padding: 150px 0;
      flex-direction: column;
      display: flex;
@@ -879,10 +879,9 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
        width: 100%;
      }
 
-     .icerikSeo,
-     .anaicerikSeo {
+     .icerikSeo {
        margin: 0;
-       padding-top: 100px;
+       padding-top: 5rem 1rem 1rem 1rem;
        display: flex;
        justify-content: center;
        align-items: center;
