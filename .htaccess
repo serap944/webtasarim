@@ -1,0 +1,9 @@
+# URL Rewrite aktif et
+RewriteEngine On
+
+# Eğer istenen dosya/dizin zaten varsa, yönlendirme yapma
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# Uzantısız yazılanları .html dosyasına yönlendir
+RewriteRule ^([^/]+)$ $1.html [L]
