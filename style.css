@@ -51,6 +51,9 @@
      font-style: italic;
 
    }
+.logo a{
+  text-decoration:none;
+}
 
    /* Hamburger menü butonu */
    .menu-toggle {
@@ -1079,5 +1082,6 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
 
 
    }
+
 
 
