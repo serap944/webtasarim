@@ -618,7 +618,7 @@
 
 
    .icerikSeo {
-     padding: 140px 16px;
+     padding: 140px 16px auto 16px;
      flex-direction: column;
      display: flex;
 
@@ -1079,4 +1079,5 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
 
 
    }
+
 
