@@ -1,44 +1,83 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noradark Web Tasarım | Profesyonel Web Sitesi Çözümleri</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- CSS -->
-    <link rel="stylesheet" href="still.css">
-<link rel="canonical" href="https://www.noradark.shop/hakkimizda" />
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Başlık -->
+  <title>Noradark Hakkımızda | Web Tasarım, SEO ve Dijital Çözümler</title>
+
+  <!-- Açıklama -->
+  <meta name="description" content="Noradark; profesyonel web tasarım, SEO, logo tasarımı ve özel kontrol paneli çözümleri sunar. Hakkımızda sayfasında misyon ve vizyonumuzu keşfedin.">
+
+  <!-- Anahtar Kelimeler -->
+  <meta name="keywords" content="noradark, web tasarım, seo, logo tasarımı, özel kontrol paneli, dijital çözümler, web sitesi">
+
+  <!-- Yazar -->
+  <meta name="author" content="Noradark">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.noradark.shop/hakkimizda" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Noradark Hakkımızda | Web Tasarım ve SEO Çözümleri">
+  <meta property="og:description" content="Noradark ile modern, kullanıcı dostu ve SEO uyumlu web çözümleri. Misyon ve vizyonumuzla dijital dünyada öne çıkın.">
+  <meta property="og:image" content="https://www.noradark.shop/images/lotus.png">
+  <meta property="og:url" content="https://www.noradark.shop/hakkimizda">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Noradark Hakkımızda">
+  <meta name="twitter:description" content="Noradark; web tasarım, SEO ve dijital çözümler sunar. Misyon & vizyonumuzu inceleyin.">
+  <meta name="twitter:image" content="https://www.noradark.shop/images/lotus.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <!-- Geri kalan HTML kodu aynı kalacak -->
 <body>
-      <!-- BAŞLIK ALANI -->
-    <header class="baslik-alani">
-        <h1 class="ana-baslik"> <a href="/index">Noradark</a></h1>
-        
-            <!-- Hamburger menü butonu (sadece mobilde görünecek) -->
-    <button class="menu-toggle" aria-label="Menüyü aç/kapat">
-      <i class="fas fa-bars"></i>
-    </button>
-   <div class="teklif">
-
- <button onclick="scrollToForm()" class="teklif-butonu">Teklif İste</button>
-  
-    </button></div>
-    </header>
-
-
-
-    <!-- MENÜ -->
+     <header>
     <nav class="menu-cubugu">
+      <h2 class="logo"> Noradark </h2>
 
-        <ul class="menu-listesi">
-           <li class="menu-oge"><a href="/" class="menu-baglantisi">Anasayfa</a></li>
-            <li class="menu-oge"><a href="/hizmetler" class="menu-baglantisi">Hizmetler</a></li>
-            <li class="menu-oge"><a href="/hakkimizda" class="menu-baglantisi">Hakkımızda</a></li>
-            <li class="menu-oge"><a href="/iletisim" class="menu-baglantisi">İletişim</a></li>
-        </ul>
+      <div class="teklif">
+
+        <button onclick="scrollToForm()" class="teklif-butonu">aranma talebi</button>
+
+        </button>
+      </div>
+
+      <!-- Hamburger menü -->
+      <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Menü -->
+      <ul class="linklerim">
+        <li class="menu-oge"><a href="/">anasayfa</a></li>
+
+        <li class="menu-oge acilir">
+          <button type="button" class="acilir-toggle">
+            hizmetlerimiz <i class="fas fa-chevron-down down-icon"></i>
+          </button>
+          <div class="acilir-pencere">
+            <a href="/web-tasarim">web tasarım</a>
+            <a href="/seo-optimizasyonunun-onemi">seo (arama optimizasyonu)</a>
+            <a href="/logo-tasarimi">logo tasarımı</a>
+            <a href="/ozel-kontrol-paneli">Özel kontrol Paneli</a>
+
+          </div>
+        </li>
+
+        <li class="menu-oge"><a href="/iletisim">iletişim</a></li>
+        <li class="menu-oge"><a href="/blog">blog</a></li>
+
+      </ul>
     </nav>
+  </header>
 
     <!-- İÇERİK -->
     <main>
@@ -109,3 +148,4 @@ Sektördeki yenilikleri yakından takip ederek, en iyi web tasarım firmalarınd
 <script src="script.js" defer></script>
 </body>
 </html>
+
