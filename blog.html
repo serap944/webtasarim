@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noradark Web Tasarım Blogu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu-cubugu">
+            <h2 class="logo"> Noradark </h2>
+
+            <div class="teklif">
+
+                <button onclick="scrollToForm()" class="teklif-butonu">aranma talebi</button>
+
+                </button>
+            </div>
+
+            <!-- Hamburger menü -->
+            <button class="menu-toggle" aria-label="Menüyü aç/kapat">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Menü -->
+            <ul class="linklerim">
+                <li class="menu-oge"><a href="/">anasayfa</a></li>
+
+                <li class="menu-oge acilir">
+                    <button type="button" class="acilir-toggle">
+                        hizmetlerimiz <i class="fas fa-chevron-down down-icon"></i>
+                    </button>
+                    <div class="acilir-pencere">
+                        <a href="/web-tasarim">web tasarım</a>
+                        <a href="/seo-optimizasyonunun-onemi">seo (arama optimizasyonu)</a>
+                        <a href="/logo-tasarimi">logo tasarımı</a>
+                        <a href="/ozel-kontrol-paneli">Özel kontrol Paneli</a>
+
+                    </div>
+                </li>
+
+                <li class="menu-oge"><a href="/iletisim">iletişim</a></li>
+                <li class="menu-oge"><a href="/blog">blog</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <main class="icerik-seo">
+        <section id="hakkinda">
+            <h2>Hakkımızda</h2>
+            <p>
+                Noradark, işletmelerin dijital dünyada güçlü bir varlık göstermesine yardımcı olmak amacıyla
+                kurulmuştur.
+                Kullanıcı dostu, modern ve arama motoru uyumlu web siteleri tasarlıyoruz.
+            </p>
+        </section>
+
+        <section id="neden-biz">
+            <h2>Neden Noradark?</h2>
+            <ul>
+                <li>✅ Uygun fiyatlı web tasarım paketleri</li>
+                <li>📱 Mobil uyumlu (responsive) tasarımlar</li>
+                <li>⚙️ Hızlı teslim süresi</li>
+                <li>🌐 SEO uyumlu yapılar</li>
+            </ul>
+        </section>
+
+        <section id="ornek-projeler">
+            <h2>Örnek Projeler</h2>
+
+            <article class="proje">
+                <h3>Filiz & Songül Güzellik Salonu</h3>
+                <p>
+                    Kullanıcı dostu, sade ve mobil uyumlu bir web sitesi tasarımı.
+                    İşletmenin müşteri kitlesine hızlı erişim sağlıyor.
+                </p>
+                <a href="https://www.filizvesongulguzellikkuaforsalonu.com.tr/" target="_blank">Siteyi Görüntüle</a>
+            </article>
+
+            <article class="proje">
+                <h3>Medikalyerim — Klinik Tanıtım Platformu</h3>
+                <p>
+                    Hastalar ve doktorları bir araya getiren bu platform, kullanıcıların kendine uygun klinik ve
+                    polikliniğe
+                    daha kolay ulaşmasını sağlar.
+                </p>
+                <a href="https://www.medikalyerim.com/" target="_blank">Siteyi Görüntüle</a>
+            </article>
+        </section>
+    </main>
+
+
+    <footer class="alt-bilgi">
+        <div class="footer-icerik">
+            <div class="footer-bolum">
+                <h4>Hızlı Erişim</h4>
+                <p><i class="fas fa-info-circle"></i><a href="hakkimizda">Hakkımızda</a></p>
+                <p><i class="fas fa-calendar-check"></i><a
+                        href="https://wa.me/905415624921?text=Merhaba, bilgi almak istiyorum.">Randevu Al</a></p>
+                <p><i class="fas fa-phone-alt"></i><a href="iletisim">İletişime Geç</a></p>
+            </div>
+
+            <div class="footer-bolum">
+                <h4>İletişim</h4>
+                <p><i class="fas fa-phone"></i> (0541) 562 49 21 </p>
+                <p><i class="fas fa-envelope"></i> serap.ekin.12@gmail.com</p>
+            </div>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>
