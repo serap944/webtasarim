@@ -1000,7 +1000,7 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
 
      .icerik-seo {
        margin: 0;
-       padding-top: 1rem 1.8rem 1rem 1rem;
+       padding-top: 1.4rem 3.5rem 1rem 1rem;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -1020,12 +1020,7 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
 
      }
 
-     .seo2 {
-       border-radius: 0;
-       background-color: #7c76f5;
 
-
-     }
 
      .seo1 img,
      .seo2 img,
