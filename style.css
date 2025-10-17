@@ -51,9 +51,10 @@
      font-style: italic;
 
    }
-.logo a{
-  text-decoration:none;
-}
+
+   .logo a {
+     text-decoration: none;
+   }
 
    /* Hamburger menü butonu */
    .menu-toggle {
@@ -772,45 +773,45 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
    }
 
 
-.icerik-seo .iletisim {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+   .icerik-seo .iletisim {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 1rem;
+   }
 
-.iletisim-yazi {
-  flex: 1;
-  min-width: 200px;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background-color: #f0f9ff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
+   .iletisim-yazi {
+     flex: 1;
+     min-width: 200px;
+     padding: 1.5rem;
+     border-radius: 8px;
+     background-color: #f0f9ff;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     transition: transform 0.3s ease;
+   }
 
-.iletisim-yazi:hover {
-  transform: translateY(-5px);
-}
+   .iletisim-yazi:hover {
+     transform: translateY(-5px);
+   }
 
-.iletisim-yazi i {
-  font-size: 2rem;
-  color: #2c7be5;
-  margin-bottom: 1rem;
-}
+   .iletisim-yazi i {
+     font-size: 2rem;
+     color: #2c7be5;
+     margin-bottom: 1rem;
+   }
 
-.iletisim-yazi p {
-  margin: 0.5rem 0;
-  line-height: 1.4;
-}
+   .iletisim-yazi p {
+     margin: 0.5rem 0;
+     line-height: 1.4;
+   }
 
-.ilekartd {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 100;
-}
+   .ilekartd {
+     position: fixed;
+     bottom: 2rem;
+     right: 2rem;
+     z-index: 100;
+   }
 
 
    /* Responsive tasarım */
@@ -952,9 +953,9 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
        width: 100%;
      }
 
-     .icerikSeo {
+     .icerik-seo {
        margin: 0;
-       padding-top: 5rem 1rem 1rem 1rem;
+       padding-top: 1rem 1.8rem 1rem 1rem;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -1082,6 +1083,3 @@ Yani yan yana duran kutuların yüksekliği, konteynerin en yüksek kutusuna gö
 
 
    }
-
-
-
