@@ -7,7 +7,7 @@ import './seo.css';
 
 const LogoTasarimi = () => {
     return (
-        < div className="anaicerik">
+        <main className="anaicerik">
             <section className="icerik-seo">
                 <h1>Logo Tasarımı</h1>
                 <p>
@@ -32,15 +32,8 @@ const LogoTasarimi = () => {
                 </p>
             </section>
 
-            <a
-                href="https://wa.me/905415624921?text=Merhaba, web sitenizden iletişime geçiyorum. Ürün ve hizmetleriniz hakkında bilgi almak istiyorum"
-                className="whatsapp-float"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i className="fab fa-whatsapp"></i>
-            </a>
-        </div >
+    
+        </main>
     );
 };
 export default LogoTasarimi;
