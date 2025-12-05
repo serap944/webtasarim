@@ -1,0 +1,49 @@
+/* 2. Her sayfanın kendi container'ı */
+.anaicerik {
+    /* TİRESİZ! */
+    max-width: 1200px;
+    margin: 0 auto;
+    /* ORTALA */
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+.icerik-seo .iletisim {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.iletisim-yazi {
+    flex: 1;
+    min-width: 200px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background-color: #f0f9ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.iletisim-yazi:hover {
+    transform: translateY(-5px);
+}
+
+.iletisim-yazi i {
+    font-size: 2rem;
+    color: #2c7be5;
+    margin-bottom: 1rem;
+}
+
+.iletisim-yazi p {
+    margin: 0.5rem 0;
+    line-height: 1.4;
+}
+
+.ilekartd {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+}

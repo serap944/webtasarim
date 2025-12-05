@@ -1,0 +1,52 @@
+.alt-bilgi {
+    background: #1a1a2e;
+    color: white;
+    padding: 3rem 1rem;
+    width: 100%;
+    margin-top: auto;
+    /* EN ÖNEMLİ SATIR! */
+}
+
+.footer-icerik {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.footer-bolum {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-bolum h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-bolum p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-bolum a {
+    color: #ddd;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-bolum a:hover {
+    color: white;
+}
+
+.footer-bolum i {
+    margin-right: 10px;
+    color: #6a11cb;
+    width: 20px;
+}

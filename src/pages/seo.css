@@ -1,0 +1,199 @@
+/* 2. Her sayfanın kendi container'ı */
+.anaicerik {
+    /* TİRESİZ! */
+    max-width: 1200px;
+    margin: 0 auto;
+    /* ORTALA */
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+.icerik-seo {
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+
+}
+
+.icerik-seo h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.seo-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 400px;
+    margin-bottom: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.seo-box {
+    flex: 0 0 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.seo-box h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0;
+    color: #333;
+}
+
+.seo-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.seo-box p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0.8rem;
+}
+
+.seo2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    min-height: 500px;
+    background-color: #7c76f5;
+}
+
+.seob {
+    flex: 0 0 50%;
+    display: flex;
+    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0 50% 50% 0;
+}
+
+.seob p {
+    color: white;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+.seoresim1 {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 50% 0 0 50%;
+    overflow: hidden;
+}
+
+.seoresim1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50% 0 0 50%;
+}
+
+.seo3 {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    min-height: 400px;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.seoc {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.seoc img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modern-text {
+    font-size: 5rem;
+    font-weight: 900;
+    color: purple;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* WhatsApp butonu */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .seo-section,
+    .seo2,
+    .seo3 {
+        flex-direction: column;
+    }
+
+    .seo-box,
+    .seob,
+    .seoresim1,
+    .seoc {
+        flex: 0 0 100%;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .seoresim1 img {
+        border-radius: 0;
+        height: 300px;
+    }
+
+    .modern-text {
+        font-size: 3rem;
+    }
+
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+    }
+}

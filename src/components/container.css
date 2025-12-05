@@ -1,0 +1,67 @@
+/* Temel kart stilleri - başlangıç durumu */
+.karta,
+.kartb {
+    opacity: 0;
+    transition: all 0.8s ease-out;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    color: white;
+    max-width: 500px;
+    margin: 2rem auto;
+}
+
+
+/* karta - soldan sağa */
+.karta {
+    transform: translateX(-100px);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.karta.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.karta:not(.visible) {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+/* kartb - yukarıdan aşağıya */
+.kartb {
+    transform: translateY(-100px);
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.kartb.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.kartb:not(.visible) {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+/* Ortak içerik stilleri */
+.karta h2,
+.kartb h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.karta h3,
+.kartb h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+}
+
+.karta p,
+.kartb p {
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}
