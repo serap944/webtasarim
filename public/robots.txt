@@ -1,3 +1,44 @@
-# https://www.robotstxt.org/robotstxt.html
+# Noradark.com.tr - Robots.txt
+# Oluşturma Tarihi: 09.12.2025
+
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+
+# Arama motoru botları
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Disallow: /admin/
+Crawl-delay: 2
+
+# Kötü botlar
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Site haritaları
+Sitemap: https://www.noradark.com.tr/sitemap.xml
+Sitemap: https://noradark.com.tr/sitemap.xml
+
+# Host (isteğe bağlı)
+# Host: www.noradark.com.tr
