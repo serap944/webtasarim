@@ -35,10 +35,7 @@ function App() {
               <Slider />
               <Container />
               <Container2 />
-              <div id="teklif-formu">
-                <h2>Teklif Formu</h2>
-                {/* Form buraya gelecek */}
-              </div>
+
 
             </div>
           } />
