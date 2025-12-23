@@ -8,6 +8,7 @@ import Slider from './components/resimgecisi';
 import Container from './components/container';
 import Container2 from './components/container2';
 import WatsapButon from './components/whatsapp';
+import TeklifFormModal from './components/teklifForm';
 import './App.css';
 
 // SAYFALARI İÇE AKTAR

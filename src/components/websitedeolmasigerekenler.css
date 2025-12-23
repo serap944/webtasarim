@@ -69,25 +69,57 @@
     text-transform: uppercase;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+/* Tablet ve daha küçük cihazlar için responsive tasarım */
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
+
     .features-title {
         font-size: 2rem;
         margin-top: 2rem;
+        text-align: center;
+        padding: 0 1rem;
     }
 
     .grid-kutusu {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: grid;
+        /* DÜZELTME: auto-fit yerine belirli column sayısı veya 1fr */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 sütun mobil için */
         gap: 15px;
-        margin: 2rem 0.5rem 3rem 0.5rem;
+        margin: 2rem 1rem;
+        padding: 0 0.5rem;
+        /* Taşmayı engellemek için */
+        box-sizing: border-box;
     }
 
     .kartx {
-        padding: 20px 10px;
+        padding: 20px 15px;
+        text-align: center;
     }
 
     .feature-image {
         width: 60px;
         height: 60px;
+        margin: 0 auto;
+    }
+}
+
+/* Mobil cihazlar için ekstra küçük ekranlar */
+@media screen and (max-width: 480px) {
+
+    .kartx {
+        padding: 18px 12px;
+    }
+
+    .feature-image {
+        width: 50px;
+        height: 50px;
     }
 }
