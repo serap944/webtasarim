@@ -1,67 +1,28 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sayfa Bulunamadı - Noradark</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f5f5f5;
-        }
+    <meta charset="utf-8">
+    <title>Noradark - Yönlendirme</title>
+    <script>
+        // GitHub Pages SPA yönlendirmesi
+        var path = window.location.pathname;
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        // Ana sayfaya yönlendir, React Router path'i query param olarak alsın
+        if (path !== '/') {
+            window.location.href = '/?redirect=' + encodeURIComponent(path);
         }
-
-        h1 {
-            color: #333;
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        a {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        a:hover {
-            background: #0056b3;
-        }
-    </style>
+    </script>
 </head>
 
 <body>
-    <div class="container">
-        <h1>404</h1>
-        <h2>Sayfa Bulunamadı</h2>
-        <p>Aradığınız sayfa taşınmış, silinmiş veya adı değiştirilmiş olabilir.</p>
-        <a href="https://www.noradark.com.tr">Ana Sayfaya Dön</a>
-    </div>
-    <script>
-        // Otomatik yönlendirme (5 saniye sonra)
-        setTimeout(function () {
-            window.location.href = "https://www.noradark.com.tr";
-        }, 5000);
-    </script>
+    <noscript>
+        <h1>JavaScript gereklidir</h1>
+        <p>Lütfen JavaScript'i etkinleştirip sayfayı yenileyin.</p>
+        <a href="/">Ana Sayfa</a>
+    </noscript>
+
+    <p>Yönlendiriliyorsunuz...</p>
 </body>
 
 </html>

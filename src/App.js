@@ -1,6 +1,6 @@
 // App.js - DÜZELTİLMİŞ VERSİYON
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header';
 import Footer from './components/footer';
 import Gridkutusu from './components/websitedeolmasigerekenler';
@@ -23,7 +23,6 @@ function App() {
   return (
     <Router>
       <Header />
-
       {/* ANA İÇERİK WRAPPER'ı EKLE */}
       <div className="ana-kitap">
         <Routes>
