@@ -3,26 +3,20 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Noradark - Yönlendirme</title>
+    <title>Noradark</title>
     <script>
-        // GitHub Pages SPA yönlendirmesi
-        var path = window.location.pathname;
-
-        // Ana sayfaya yönlendir, React Router path'i query param olarak alsın
-        if (path !== '/') {
-            window.location.href = '/?redirect=' + encodeURIComponent(path);
-        }
+        // Tek satırlık basit yönlendirme
+        sessionStorage.redirect = location.pathname;
+        location.href = '/';
     </script>
 </head>
 
 <body>
     <noscript>
-        <h1>JavaScript gereklidir</h1>
-        <p>Lütfen JavaScript'i etkinleştirip sayfayı yenileyin.</p>
-        <a href="/">Ana Sayfa</a>
+        <h1>JavaScript Gerekli</h1>
+        <p>Noradark web sitesi JavaScript gerektirir.</p>
+        <a href="/">Ana Sayfaya Git</a>
     </noscript>
-
-    <p>Yönlendiriliyorsunuz...</p>
 </body>
 
 </html>
