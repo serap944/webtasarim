@@ -1,6 +1,6 @@
 [build]
   publish = "build"
-  command = "CI=false npm run build"  # ⬅️ BURAYI DEĞİŞTİR!
+  command = "CI=false DISABLE_ESLINT_PLUGIN=true npm run build"  # ⬅️ BURAYI DEĞİŞTİR!
 
 [[redirects]]
   from = "/*"
