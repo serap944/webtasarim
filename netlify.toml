@@ -1,6 +1,6 @@
 [build]
   publish = "build"
-  command = "npm run build"
+  command = "CI=false npm run build"  # ⬅️ BURAYI DEĞİŞTİR!
 
 [[redirects]]
   from = "/*"
@@ -9,6 +9,7 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NODE_OPTIONS = "--max-old-space-size=4096"
 
 [[headers]]
   for = "/*"
