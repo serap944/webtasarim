@@ -1,6 +1,7 @@
-// App.js - DÜZELTİLMİŞ VERSİYON
+// App.js - TAM DOĞRU VERSİYON
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // ⬅️ BURAYI DÜZELT!
+import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/header';
 import Footer from './components/footer';
 import Gridkutusu from './components/websitedeolmasigerekenler';
@@ -12,83 +13,78 @@ import TeklifFormModal from './components/teklifForm';
 import './App.css';
 
 // SAYFALARI İÇE AKTAR
-
 import SEO from './pages/seo-optimizisyonu';
 import WebTasarim from './pages/webtasarim';
 import LogoTasarimi from './pages/LogoTasarimi';
 import Iletisim from './pages/iletisim';
-
+import OzelKontrolPaneli from './pages/OzelKontrolPaneli';
+import Blog from './pages/blog';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      {/* ANA İÇERİK WRAPPER'ı EKLE */}
-      <div className="ana-kitap">
-        <Routes>
-          {/* ANA SAYFA */}
-          <Route path="/" element={
-            <div>
+    <HelmetProvider>
+      <Router>
+        <Header />
+        <div className="ana-kitap">
+          <Routes>
+            {/* ANA SAYFA */}
+            <Route path="/" element={
+              <div>
+                <Gridkutusu />
+                <Slider />
+                <Container />
+                <Container2 />
+              </div>
+            } />
 
-              <Gridkutusu />
-              <Slider />
-              <Container />
-              <Container2 />
+            <Route path="/web-tasarim" element={
+              <div>
+                <WebTasarim />
+              </div>
+            } />
 
+            <Route path="/seo-optimizasyonu" element={
+              <div>
+                <SEO />
+              </div>
+            } />
 
-            </div>
-          } />
+            <Route path="/logo-tasarimi" element={
+              <div>
+                <LogoTasarimi />
+              </div>
+            } />
 
-          <Route path="/web-tasarim" element={
-            <div>
-              <WebTasarim />
-            </div>
-          } />
+            <Route path="/Ozel-Kontrol-Paneli" element={
+              <div>
+                <OzelKontrolPaneli />
+              </div>
+            } />
 
-          <Route path="/seo-optimizasyonu" element={
-            <div>
-              <SEO />
-            </div>
-          } />
+            <Route path="/iletisim" element={
+              <div>
+                <Iletisim />
+              </div>
+            } />
 
-          <Route path="/logo-tasarimi" element={
-            <div>
-              <LogoTasarimi />
-            </div>
-          } />
+            <Route path="/Blog" element={
+              <div >
+                <Blog />
+              </div>
+            } />
 
-          <Route path="/ozel-kontrol-paneli" element={
-            <div style={{ padding: '20px' }}>
-              <h1>Kontrol Paneli Sayfası</h1>
-              <p>Bu sayfa henüz hazır değil.</p>
-            </div>
-          } />
-
-          <Route path="/iletisim" element={
-            <div>
-              <Iletisim />
-            </div>
-          } />
-
-          <Route path="/blog" element={
-            <div style={{ padding: '20px' }}>
-              <h1>Blog Sayfası</h1>
-              <p>Bu sayfa henüz hazır değil.</p>
-            </div>
-          } />
-
-          {/* 404 sayfası ekleyelim */}
-          <Route path="*" element={
-            <div style={{ padding: '20px', textAlign: 'center' }}>
-              <h1>404 - Sayfa Bulunamadı</h1>
-            </div>
-          } />
-        </Routes>
-      </div>
-      <WatsapButon />
-      <Footer />
-
-    </Router>
+            {/* 404 sayfası */}
+            <Route path="*" element={
+              <div style={{ padding: '20px', textAlign: 'center' }}>
+                <h1>404 - Sayfa Bulunamadı</h1>
+              </div>
+            } />
+          </Routes>
+        </div>
+        <WatsapButon />
+        <Footer />
+      </Router>
+    </HelmetProvider>
   );
 }
 

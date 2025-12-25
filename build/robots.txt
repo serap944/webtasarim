@@ -1,44 +1,68 @@
-# Noradark.com.tr - Robots.txt
-# Oluşturma Tarihi: 09.12.2025
+# Noradark Web Tasarım - Robots.txt
+# Created: 25 Aralık 2025
+# Sitemap: https://www.noradark.com.tr/sitemap.xml
 
 User-agent: *
 Allow: /
 Disallow: /admin/
-Disallow: /dashboard/
 Disallow: /private/
 Disallow: /api/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /search/
+Disallow: /?s=
+Crawl-delay: 2
 
-# Arama motoru botları
+# Arama motorları
 User-agent: Googlebot
 Allow: /
 Disallow: /admin/
-Disallow: /api/
+Disallow: /private/
 Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
 Disallow: /admin/
-Disallow: /api/
-Crawl-delay: 1
+Disallow: /private/
+Crawl-delay: 2
 
 User-agent: YandexBot
 Allow: /
 Disallow: /admin/
-Crawl-delay: 2
+Disallow: /private/
+Crawl-delay: 3
 
-# Kötü botlar
+# Sosyal medya botları
+User-agent: FacebookExternalHit
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: LinkedInBot
+Allow: /
+Crawl-delay: 1
+
+# Kötü amaçlı botlar
 User-agent: AhrefsBot
-Crawl-delay: 10
+Disallow: /
 
-User-agent: SemrushBot
-Crawl-delay: 10
+User-agent: SEMrushBot
+Disallow: /
 
 User-agent: MJ12bot
-Crawl-delay: 10
+Disallow: /
 
-# Site haritaları
+User-agent: DotBot
+Disallow: /
+
+User-agent: MauiBot
+Disallow: /
+
+# Sitemap bildirimi
 Sitemap: https://www.noradark.com.tr/sitemap.xml
-Sitemap: https://noradark.com.tr/sitemap.xml
 
-# Host (isteğe bağlı)
-# Host: www.noradark.com.tr
+# Host (ana sunucu) bildirimi - Netlify için
+Host: www.noradark.com.tr
