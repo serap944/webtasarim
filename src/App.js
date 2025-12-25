@@ -1,6 +1,6 @@
-// App.js - TAM DOĞRU VERSİYON
+// App.js - TAM DÜZELTİLMİŞ VERSİYON
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // ⬅️ BURAYI DÜZELT!
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/header';
 import Footer from './components/footer';
@@ -37,41 +37,19 @@ function App() {
               </div>
             } />
 
-            <Route path="/web-tasarim" element={
-              <div>
-                <WebTasarim />
-              </div>
-            } />
+            <Route path="/web-tasarim" element={<WebTasarim />} />
 
-            <Route path="/seo-optimizasyonu" element={
-              <div>
-                <SEO />
-              </div>
-            } />
+            <Route path="/seo-optimizasyonu" element={<SEO />} />
 
-            <Route path="/logo-tasarimi" element={
-              <div>
-                <LogoTasarimi />
-              </div>
-            } />
+            <Route path="/logo-tasarimi" element={<LogoTasarimi />} />
 
-            <Route path="/Ozel-Kontrol-Paneli" element={
-              <div>
-                <OzelKontrolPaneli />
-              </div>
-            } />
+            {/* ⬇️ DÜZELT: küçük harf */}
+            <Route path="/ozel-kontrol-paneli" element={<OzelKontrolPaneli />} />
 
-            <Route path="/iletisim" element={
-              <div>
-                <Iletisim />
-              </div>
-            } />
+            <Route path="/iletisim" element={<Iletisim />} />
 
-            <Route path="/Blog" element={
-              <div >
-                <Blog />
-              </div>
-            } />
+            {/* ⬇️ DÜZELT: küçük harf */}
+            <Route path="/blog" element={<Blog />} />
 
             {/* 404 sayfası */}
             <Route path="*" element={
