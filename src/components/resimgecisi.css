@@ -1,149 +1,344 @@
-/* src/components/Slider.css */
-/* Slider container */
+/* ==================== */
+/* SLIDER STYLES - TAM EKRAN KAPLAMA */
+/* ==================== */
+
+/* 1. MAIN CONTAINER */
 .kutu2 {
     position: relative;
-    overflow: hidden;
+    width: 100%;
+    max-width: 1400px;
     margin: 2rem auto;
-    padding: 1rem;
-    max-width: 1200px;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .kutu2 h2 {
     text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
+    color: white;
     font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
 }
 
-.flexkutusu1 {
+/* 2. SLIDER CONTAINER - TAM GENİŞLİK */
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0 20px;
+    /* SOL VE SAĞ PADDING */
+    box-sizing: border-box;
+}
+
+/* 3. SLIDES TRACK - FLEX İÇİN GAP */
+.slides-track {
     display: flex;
-    gap: 2rem;
-    transition: transform 0.6s ease;
-    margin: 0;
-    padding: 0;
+    will-change: transform;
 }
 
-.kartw {
-    flex: 0 0 calc((100% - (2rem * 2)) / 3);
+/* 4. SLIDE CARD - TAM BOYUT */
+.slide-card {
+    flex-shrink: 0;
+    height: 380px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    opacity: 0.95;
+}
+
+.slide-card.visible {
+    opacity: 1;
+}
+
+.slide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. CARD CONTENT */
+.card-content {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 7px 12px rgba(150, 2, 138, 0.4);
-    border-radius: 2rem;
-    height: 60vh;
-    background-color: #3498db;
-    margin: 10px 0;
-    overflow: hidden;
-    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Görsel ayarı */
-.kartw img {
+/* 6. IMAGE CONTAINER - RESİM KESİLMESİN */
+.image-container {
     width: 100%;
-    height: 75%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 2rem 2rem 0 0;
+    transition: transform 0.5s ease;
 }
 
-.kartw h3 {
-    padding: 1rem;
-    color: white;
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 0;
-}
-
-.button1 {
-    padding: 9px 16px;
-    border-radius: 9px;
-    border: none;
-    margin-bottom: 1rem;
-    background-color: rgba(122, 8, 133, 0.7);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button1:hover {
-    background-color: rgba(191, 124, 197, 0.7);
+.slide-card:hover .image-container img {
     transform: scale(1.05);
 }
 
-/* Oklar */
-.okyonu {
+/* 7. CARD TITLE */
+.slide-card h3 {
+    padding: 1rem;
+    color: #333;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0;
+    flex-grow: 1;
+    font-weight: 600;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 8. CARD BUTTON */
+.card-button {
+    margin: 0 auto 1.5rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+    max-width: 200px;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+}
+
+/* 9. NAVIGATION BUTTONS */
+.nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(122, 8, 133, 0.7);
-    color: #fff;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
     border-radius: 50%;
+    font-size: 1.5rem;
+    color: #764ba2;
     cursor: pointer;
-    font-size: 20px;
+    transition: all 0.3s ease;
     z-index: 10;
-    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.okyonu:hover {
-    background: rgba(122, 8, 133, 1);
+.nav-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.okyonu.sol {
-    left: 20px;
+.prev-btn {
+    left: 10px;
 }
 
-.okyonu.sag {
-    right: 20px;
+.next-btn {
+    right: 10px;
 }
 
-/* Dots (navigasyon noktaları) */
-.dots {
+/* 10. PAGINATION DOTS */
+.pagination-dots {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    gap: 8px;
+    margin-top: 1.5rem;
 }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
-    background-color: #bbb;
+.pagination-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    padding: 0;
 }
 
-.dot.active {
-    background-color: rgba(122, 8, 133, 0.7);
+.pagination-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(1.2);
 }
 
-/* Responsive tasarım */
+.pagination-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+/* ==================== */
+/* RESPONSIVE STYLES - TAM UYUM */
+/* ==================== */
+
+/* TABLET (768px ve altı) - 2 KART */
 @media (max-width: 768px) {
-    .kartw {
-        flex: 0 0 calc((100% - 2rem) / 2);
-        height: 50vh;
+    .kutu2 {
+        padding: 1.5rem 0.5rem;
+        border-radius: 15px;
     }
 
     .kutu2 h2 {
         font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .slider-container {
+        padding: 0 15px;
+    }
+
+    .slide-card {
+        height: 350px;
+    }
+
+    .image-container {
+        height: 200px;
+    }
+
+    .slide-card h3 {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .card-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
+    }
+
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
 
+/* MOBILE (480px ve altı) - 1 KART */
 @media (max-width: 480px) {
-    .kartw {
-        flex: 0 0 100%;
-        height: 45vh;
+    .kutu2 {
+        padding: 1rem 0.5rem;
+        margin: 1rem auto;
+        border-radius: 12px;
     }
 
-    .okyonu {
+    .kutu2 h2 {
+        font-size: 1.5rem;
+        padding: 0 0.5rem;
+    }
+
+    .slider-container {
+        padding: 0 10px;
+    }
+
+    .slide-card {
+        height: 320px;
+        border-radius: 12px;
+    }
+
+    .image-container {
+        height: 180px;
+    }
+
+    .slide-card h3 {
+        font-size: 0.95rem;
+        padding: 0.6rem;
+    }
+
+    .card-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        width: 85%;
+        margin-bottom: 0.8rem;
+    }
+
+    .nav-btn {
         width: 35px;
         height: 35px;
-        font-size: 16px;
+        font-size: 1rem;
+        top: 45%;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
+    }
+
+    .pagination-dots {
+        margin-top: 1rem;
+        gap: 6px;
+    }
+
+    .pagination-dot {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* BÜYÜK EKRAN (1200px ve üstü) - 3 KART */
+@media (min-width: 1200px) {
+    .kutu2 {
+        max-width: 1400px;
+        padding: 2.5rem 1rem;
+    }
+
+    .slide-card {
+        height: 400px;
+    }
+
+    .image-container {
+        height: 240px;
+    }
+
+    .slide-card h3 {
+        font-size: 1.2rem;
+        padding: 1.2rem;
+    }
+
+    .card-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ÇOK KÜÇÜK TELEFON (360px ve altı) */
+@media (max-width: 360px) {
+    .slide-card {
+        height: 300px;
+    }
+
+    .image-container {
+        height: 160px;
+    }
+
+    .slide-card h3 {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .card-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
     }
 }
