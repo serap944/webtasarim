@@ -1,33 +1,63 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './resimgecisi.css';
 
 const Slider = () => {
-    // 1. STATE'LER
-    /* State: Bileşenin hafızası/aklı
-
-useState(0): "0 değeriyle başlayan bir değişken yap"
-
-[currentSlide, setCurrentSlide]:
-
-currentSlide: Şu anki değer (okuyabilirsin)
-
-setCurrentSlide: Değeri değiştirmek için fonksiyon
-"useState = Hafıza oluştur. Değişince ekran otomatik yenilenir!"
-"useRef = Ekrandaki bir elemana tutunmak"
-    */
+    const navigate = useNavigate();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slidesToShow, setSlidesToShow] = useState(3);
     const [cardWidth, setCardWidth] = useState(0);
     const containerRef = useRef(null);
 
-    // 2. SLIDE VERİLERİ
+    // 1. BUTON TIKLAMA FONKSİYONU EKLEYİN - BU EKSİKTİ
+    const handleButtonClick = (link) => {
+        navigate(link);
+    };
+
+    // 2. SLIDE VERİLERİ - App.js'deki path'lerle aynı yapın
     const slides = [
-        { id: 1, image: "/images/blog1.jpg", title: "Kurumsal Web Sitesi Nedir?", buttonText: "daha fazlası" },
-        { id: 2, image: "/images/blog7.jpg", title: "E-ticaret Sistemleri Nedir?", buttonText: "daha fazlası" },
-        { id: 3, image: "/images/blog2.jpg", title: "Responsive Tasarım Nedir?", buttonText: "daha fazlası" },
-        { id: 4, image: "/images/blog3.jpg", title: "SEO Optimizasyonu Nedir?", buttonText: "daha fazlası" },
-        { id: 5, image: "/images/blog4.jpg", title: "Kolay CMS Kontrol Sistemi Nedir?", buttonText: "daha fazlası" },
-        { id: 6, image: "/images/blog5.jpg", title: "Logo Tasarımı", buttonText: "daha fazlası" }
+        {
+            id: 1,
+            image: "/images/blog1.jpg",
+            title: "Kurumsal Web Sitesi Nedir?",
+            buttonText: "daha fazlası",
+            link: "/web-tasarim" // App.js'de: path="/web-tasarim"
+        },
+        {
+            id: 2,
+            image: "/images/blog7.jpg",
+            title: "E-ticaret Sistemleri Nedir?",
+            buttonText: "daha fazlası",
+            link: "/web-tasarim"
+        },
+        {
+            id: 3,
+            image: "/images/blog2.jpg",
+            title: "Responsive Tasarım Nedir?",
+            buttonText: "daha fazlası",
+            link: "/blog" // App.js'de: path="/blog"
+        },
+        {
+            id: 4,
+            image: "/images/blog3.jpg",
+            title: "SEO Optimizasyonu Nedir?",
+            buttonText: "daha fazlası",
+            link: "/seo-optimizasyonu" // App.js'de: path="/seo-optimizasyonu"
+        },
+        {
+            id: 5,
+            image: "/images/blog4.jpg",
+            title: "Kolay CMS Kontrol Sistemi Nedir?",
+            buttonText: "daha fazlası",
+            link: "/ozel-kontrol-paneli" // App.js'de: path="/ozel-kontrol-paneli"
+        },
+        {
+            id: 6,
+            image: "/images/blog5.jpg",
+            title: "Logo Tasarımı",
+            buttonText: "daha fazlası",
+            link: "/logo-tasarimi" // App.js'de: path="/logo-tasarimi"
+        }
     ];
 
     // 3. EKRAN BOYUTUNA GÖRE KART SAYISI AYARLA
@@ -36,19 +66,16 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
             let newSlidesToShow;
 
             if (window.innerWidth <= 480) {
-                newSlidesToShow = 1; // Telefon: 1 kart
+                newSlidesToShow = 1;
             } else if (window.innerWidth <= 768) {
-                newSlidesToShow = 2; // Tablet: 2 kart
+                newSlidesToShow = 2;
             } else {
-                newSlidesToShow = 3; // Bilgisayar: 3 kart
+                newSlidesToShow = 3;
             }
 
             setSlidesToShow(newSlidesToShow);
-
-            // Kart genişliğini hesapla
             calculateCardWidth(newSlidesToShow);
 
-            // Current slide'ı düzelt
             if (currentSlide > slides.length - newSlidesToShow) {
                 setCurrentSlide(Math.max(0, slides.length - newSlidesToShow));
             }
@@ -59,19 +86,15 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
 
             const container = containerRef.current;
             const containerWidth = container.offsetWidth;
-            const padding = 40; // slider-container padding'i
+            const padding = 40;
             const availableWidth = containerWidth - padding;
-            const gap = 20; // CSS'deki gap
+            const gap = 20;
 
-            // Formül: (kullanılabilir genişlik - (gap * (kartSayısı - 1))) / kartSayısı
             const width = (availableWidth - (gap * (cardsToShow - 1))) / cardsToShow;
             setCardWidth(width);
         };
 
-        // İlk yükleme
         handleResize();
-
-        // Event listener
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
@@ -100,7 +123,6 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
 
         const gap = 20;
         const translateValue = (cardWidth + gap) * currentSlide;
-
         return `translateX(-${translateValue}px)`;
     };
 
@@ -108,17 +130,6 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
         <section className="kutu2" ref={containerRef}>
             <h2>Web Tasarım Hizmetlerimiz</h2>
 
-            {/* DEBUG INFO */}
-            <div style={{
-                textAlign: 'center',
-                color: 'rgba(255,255,255,0.7)',
-                fontSize: '12px',
-                marginBottom: '10px'
-            }}>
-                Kart Genişliği: {Math.round(cardWidth)}px | Gösterilen: {slidesToShow}
-            </div>
-
-            {/* SLIDER CONTAINER - BURASI ÖNEMLİ! */}
             <div className="slider-container">
                 <div
                     className="slides-track"
@@ -126,7 +137,7 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
                         transform: getTransformValue(),
                         transition: 'transform 0.6s ease',
                         display: 'flex',
-                        gap: '20px' // CSS gap kullanıyoruz
+                        gap: '20px'
                     }}
                 >
                     {slides.map((slide, index) => (
@@ -134,8 +145,8 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
                             key={slide.id}
                             className={`slide-card ${index >= currentSlide && index < currentSlide + slidesToShow ? 'visible' : ''}`}
                             style={{
-                                flex: `0 0 ${cardWidth}px`, // SADECE WIDTH
-                                minWidth: 0 // Overflow'u önle
+                                flex: `0 0 ${cardWidth}px`,
+                                minWidth: 0
                             }}
                         >
                             <div className="card-content">
@@ -147,7 +158,10 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
                                     />
                                 </div>
                                 <h3>{slide.title}</h3>
-                                <button className="card-button">
+                                <button
+                                    className="card-button"
+                                    onClick={() => handleButtonClick(slide.link)} // BU FONKSİYON ARTIK TANIMLI
+                                >
                                     {slide.buttonText}
                                 </button>
                             </div>
@@ -156,7 +170,6 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
                 </div>
             </div>
 
-            {/* NAVIGATION */}
             <button className="nav-btn prev-btn" onClick={prevSlide}>
                 ‹
             </button>
@@ -165,7 +178,6 @@ setCurrentSlide: Değeri değiştirmek için fonksiyon
                 ›
             </button>
 
-            {/* PAGINATION */}
             <div className="pagination-dots">
                 {Array.from({ length: Math.max(1, slides.length - slidesToShow + 1) }).map((_, index) => (
                     <button

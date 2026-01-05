@@ -19,12 +19,14 @@
 .grid-kutusu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Otomatik sığdırma ile sütun sayısı */
+
     gap: 20px;
     margin: 0;
     padding: 0;
     justify-items: center;
     align-items: start;
-    max-width: 1200px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -70,7 +72,7 @@
 }
 
 /* Tablet ve daha küçük cihazlar için responsive tasarım */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
 
     html,
     body {
@@ -80,11 +82,16 @@
         padding: 0;
     }
 
+    .website-features {
+        padding: 0;
+
+        margin-top: 2.7rem 0.1rem;
+    }
+
     .features-title {
         font-size: 2rem;
-        margin-top: 2rem;
+
         text-align: center;
-        padding: 0 1rem;
     }
 
     .grid-kutusu {
@@ -93,8 +100,9 @@
         grid-template-columns: repeat(2, 1fr);
         /* 2 sütun mobil için */
         gap: 15px;
-        margin: 2rem 1rem;
-        padding: 0 0.5rem;
+        width: 100%;
+        margin: 0;
+        padding: 0;
         /* Taşmayı engellemek için */
         box-sizing: border-box;
     }
@@ -112,14 +120,23 @@
 }
 
 /* Mobil cihazlar için ekstra küçük ekranlar */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
+    .grid-kutusu {
+        grid-template-columns: 1fr;
+        /* Tek sütun mobil için */
+        margin: 0;
+        padding: 3px 7px;
+    }
 
     .kartx {
-        padding: 18px 12px;
+        padding: 10px 7px;
+        text-align: center;
     }
 
     .feature-image {
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 60px;
+        margin: 0 auto;
     }
+
 }
