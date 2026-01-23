@@ -38,10 +38,8 @@ function App() {
             } />
 
             <Route path="/web-tasarim" element={<WebTasarim />} />
-
-            <Route path="/seo-optimizasyonu" element={<SEO />} />
-
             <Route path="/logo-tasarimi" element={<LogoTasarimi />} />
+            <Route path="/seo-optimizasyonu" element={<SEO />} />
 
             {/* ⬇️ DÜZELT: küçük harf */}
             <Route path="/ozel-kontrol-paneli" element={<OzelKontrolPaneli />} />
@@ -52,7 +50,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
 
             {/* 404 sayfası */}
-            <Route path="*" element={
+            <Route path="" element={
               <div style={{ padding: '20px', textAlign: 'center' }}>
                 <h1>404 - Sayfa Bulunamadı</h1>
               </div>

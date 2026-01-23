@@ -1,81 +1,32 @@
-/* 2. Her sayfanın kendi container'ı */
-.anaicerik {
-    /* TİRESİZ! */
-    max-width: 1200px;
-    margin: 0 auto;
-    /* ORTALA */
-    padding: 2rem 3rem;
-    width: 100%;
-}
-
 .icerik-seo {
-
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-    justify-content: center;
+    background-color: #f5f5f5;
+    display: block;
     width: 100%;
-    padding: 20px;
-
-}
-
-.icerik-seo h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.seo-section {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    min-height: 400px;
-    margin-bottom: 40px;
-    padding: 0;
-    margin: 0;
-}
-
-.seo-box {
-    flex: 0 0 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    padding: 2rem;
 }
 
-.seo-box h1 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
-    color: #333;
+.icerik-seo div {
+    display: flex;
+    justify-content: center;
+
 }
 
-.seo-box h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: white;
-}
-
-.seo-box p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #555;
-    margin: 0 0.8rem;
-}
 
 .seo2 {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    min-height: 500px;
+    height: auto;
     background-color: #7c76f5;
 }
 
 .seob {
     flex: 0 0 50%;
     display: flex;
-    padding: 3rem;
+    padding: 1.5rem;
     justify-content: center;
     align-items: center;
     flex-direction: column;

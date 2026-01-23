@@ -1,14 +1,4 @@
-/* 2. Her sayfanın kendi container'ı */
-.anaicerik {
-    /* TİRESİZ! */
-    max-width: 1200px;
-    margin: 0 auto;
-    /* ORTALA */
-    padding: 2rem 3rem;
-    width: 100%;
-}
-
-.icerik-seo .iletisim {
+.iletisim {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

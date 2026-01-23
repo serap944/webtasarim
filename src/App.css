@@ -1,23 +1,28 @@
-/* src/App.css - GÜNCELLE */
-* {
-    box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-#root {
+.ana-kitap {
+    min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-.ana-kitap {
+.anaicerik {
+    display: flex;
     flex: 1;
+    flex-direction: column;
+    margin-top: 70px;
+    padding: 0;
+    height: auto;
+    min-width: 100%;
+    /* header yüksekliği kadar boşluk bırak */
+}
+
+.alt-bilgi {
     width: 100%;
+    margin-top: auto;
+    display: flex;
+    background: #1a1a2e;
+    color: white;
+    padding: 3rem 1rem;
+
+
 }

@@ -1,4 +1,3 @@
-// src/pages/SEO.jsx
 import React from 'react';
 import './seo.css';
 // Eğer resimlerin public klasöründeyse bu şekilde kullan
@@ -9,35 +8,32 @@ const SEO = () => {
     return (
         <main className="anaicerik">
             {/* İlk Bölüm */}
-            <section className="seo-section">
-                <div className="seo-box">
-                    <div>
-                        <h1>SEO (Arama Optimizasyonu)</h1>
-                        <p>
-                            SEO (Search Engine Optimization), web sitelerinin arama motorlarında daha
-                            görünür olmasını sağlayan dijital pazarlama yöntemlerinin bütünüdür. Doğru
-                            SEO stratejileriyle hazırlanan bir site, Google gibi arama motorlarında üst
-                            sıralara çıkarak daha fazla potansiyel müşteriye ulaşabilir. Böylece hem
-                            organik trafik artar hem de marka bilinirliği güçlenir.
-                        </p>
-                        <p>
-                            SEO çalışmaları; teknik optimizasyon, anahtar kelime planlaması, içerik
-                            düzenlemesi ve backlink stratejilerini kapsar. Düzenli olarak yapılan
-                            SEO iyileştirmeleri sayesinde siteniz, yalnızca kısa vadeli değil uzun vadeli
-                            bir başarı da elde eder. Bu da reklam bütçesinden tasarruf etmenize olanak tanır.
-                        </p>
-                    </div>
+            <section className="icerik-seo">
+
+
+                <h1>SEO (Arama Optimizasyonu)</h1>
+                <p>
+                    SEO (Search Engine Optimization), web sitelerinin arama motorlarında daha
+                    görünür olmasını sağlayan dijital pazarlama yöntemlerinin bütünüdür. Doğru
+                    SEO stratejileriyle hazırlanan bir site, Google gibi arama motorlarında üst
+                    sıralara çıkarak daha fazla potansiyel müşteriye ulaşabilir. Böylece hem
+                    organik trafik artar hem de marka bilinirliği güçlenir.
+                </p>
+                <p>
+                    SEO çalışmaları; teknik optimizasyon, anahtar kelime planlaması, içerik
+                    düzenlemesi ve backlink stratejilerini kapsar. Düzenli olarak yapılan
+                    SEO iyileştirmeleri sayesinde siteniz, yalnızca kısa vadeli değil uzun vadeli
+                    bir başarı da elde eder. Bu da reklam bütçesinden tasarruf etmenize olanak tanır.
+                </p>
+
+                <div className="modern-text">
+                    Modern Tasarım
+                    <br /> +
+                    <br /> Güçlü SEO
+                    <br /> =
+                    <br /> Başarı.
                 </div>
 
-                <div className="seo-box">
-                    <div className="modern-text">
-                        Modern Tasarım
-                        <br /> +
-                        <br /> Güçlü SEO
-                        <br /> =
-                        <br /> Başarı.
-                    </div>
-                </div>
             </section>
 
             {/* İkinci Bölüm */}
@@ -86,7 +82,7 @@ const SEO = () => {
                 </div>
 
                 <div className="seoc">
-                    <p style={{ fontSize: '1.3rem', lineHeight: '1.8' }}>
+                    <p >
                         Günümüzde internet kullanıcılarının büyük bir kısmı, ihtiyaç duydukları
                         hizmet ve ürünleri arama motorları üzerinden aramaktadır. Bu nedenle SEO,
                         işletmelerin hedef kitlelerine ulaşmasında vazgeçilmez bir araçtır.
@@ -96,7 +92,7 @@ const SEO = () => {
                 </div>
             </section>
 
-        </main>
+        </main >
     );
 };
 
