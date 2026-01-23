@@ -4,24 +4,24 @@ import './resimgecisi.css';
 
 const Slider = () => {
     const navigate = useNavigate();
-    const [currentSlide, setCurrentSlide] = useState(0);
-    const [slidesToShow, setSlidesToShow] = useState(3);
-    const [cardWidth, setCardWidth] = useState(0);
-    const containerRef = useRef(null);
+    const kapsayiciRef = useRef(null);
 
-    // 1. BUTON TIKLAMA FONKSİYONU EKLEYİN - BU EKSİKTİ
-    const handleButtonClick = (link) => {
-        navigate(link);
-    };
+    const [mevcutSlayt, setMevcutSlayt] = useState(0);
+    const [gosterilecekKartSayisi, setGosterilecekKartSayisi] = useState(3);
+    const [kartGenisligi, setKartGenisligi] = useState(0);
 
-    // 2. SLIDE VERİLERİ - App.js'deki path'lerle aynı yapın
-    const slides = [
+    // 👉 Dokunma için ref’ler
+    const dokunmaBaslangicX = useRef(0);
+    const dokunmaBitisX = useRef(0);
+
+    // 👉 Slider verileri
+    const slaytlar = [
         {
             id: 1,
             image: "/images/blog1.jpg",
             title: "Kurumsal Web Sitesi Nedir?",
             buttonText: "daha fazlası",
-            link: "/web-tasarim" // App.js'de: path="/web-tasarim"
+            link: "/web-tasarim"
         },
         {
             id: 2,
@@ -35,134 +35,152 @@ const Slider = () => {
             image: "/images/blog2.jpg",
             title: "Responsive Tasarım Nedir?",
             buttonText: "daha fazlası",
-            link: "/blog" // App.js'de: path="/blog"
+            link: "/blog"
         },
         {
             id: 4,
             image: "/images/blog3.jpg",
             title: "SEO Optimizasyonu Nedir?",
             buttonText: "daha fazlası",
-            link: "/seo-optimizasyonu" // App.js'de: path="/seo-optimizasyonu"
+            link: "/seo-optimizasyonu"
         },
         {
             id: 5,
             image: "/images/blog4.jpg",
             title: "Kolay CMS Kontrol Sistemi Nedir?",
             buttonText: "daha fazlası",
-            link: "/ozel-kontrol-paneli" // App.js'de: path="/ozel-kontrol-paneli"
+            link: "/ozel-kontrol-paneli"
         },
         {
             id: 6,
             image: "/images/blog5.jpg",
             title: "Logo Tasarımı",
             buttonText: "daha fazlası",
-            link: "/logo-tasarimi" // App.js'de: path="/logo-tasarimi"
+            link: "/logo-tasarimi"
         }
     ];
 
-    // 3. EKRAN BOYUTUNA GÖRE KART SAYISI AYARLA
+    // 👉 Ekran boyutuna göre ayarlama
     useEffect(() => {
-        const handleResize = () => {
-            let newSlidesToShow;
+        const ekranDegisti = () => {
+            let kartSayisi;
 
             if (window.innerWidth <= 480) {
-                newSlidesToShow = 1;
+                kartSayisi = 1;
             } else if (window.innerWidth <= 768) {
-                newSlidesToShow = 2;
+                kartSayisi = 2;
             } else {
-                newSlidesToShow = 3;
+                kartSayisi = 3;
             }
 
-            setSlidesToShow(newSlidesToShow);
-            calculateCardWidth(newSlidesToShow);
+            setGosterilecekKartSayisi(kartSayisi);
+            kartGenisligiHesapla(kartSayisi);
 
-            if (currentSlide > slides.length - newSlidesToShow) {
-                setCurrentSlide(Math.max(0, slides.length - newSlidesToShow));
+            if (mevcutSlayt > slaytlar.length - kartSayisi) {
+                setMevcutSlayt(Math.max(0, slaytlar.length - kartSayisi));
             }
         };
 
-        const calculateCardWidth = (cardsToShow) => {
-            if (!containerRef.current) return;
+        const kartGenisligiHesapla = (kartSayisi) => {
+            if (!kapsayiciRef.current) return;
 
-            const container = containerRef.current;
-            const containerWidth = container.offsetWidth;
-            const padding = 40;
-            const availableWidth = containerWidth - padding;
-            const gap = 20;
+            const kapsayiciGenisligi = kapsayiciRef.current.offsetWidth;
+            const bosluk = 20;
+            const icBosluk = 40;
 
-            const width = (availableWidth - (gap * (cardsToShow - 1))) / cardsToShow;
-            setCardWidth(width);
+            const kullanilabilirAlan = kapsayiciGenisligi - icBosluk;
+            const genislik =
+                (kullanilabilirAlan - bosluk * (kartSayisi - 1)) / kartSayisi;
+
+            setKartGenisligi(genislik);
         };
 
-        handleResize();
-        window.addEventListener('resize', handleResize);
+        ekranDegisti();
+        window.addEventListener('resize', ekranDegisti);
 
-        return () => window.removeEventListener('resize', handleResize);
-    }, [currentSlide, slides.length]);
+        return () => window.removeEventListener('resize', ekranDegisti);
+    }, [mevcutSlayt, slaytlar.length]);
 
-    // 4. SLIDER FONKSİYONLARI
-    const nextSlide = () => {
-        const maxSlide = slides.length - slidesToShow;
-        setCurrentSlide(prev => prev >= maxSlide ? 0 : prev + 1);
+    // 👉 İleri / geri
+    const ileri = () => {
+        const max = slaytlar.length - gosterilecekKartSayisi;
+        setMevcutSlayt((onceki) => (onceki >= max ? 0 : onceki + 1));
     };
 
-    const prevSlide = () => {
-        const maxSlide = slides.length - slidesToShow;
-        setCurrentSlide(prev => prev <= 0 ? maxSlide : prev - 1);
+    const geri = () => {
+        const max = slaytlar.length - gosterilecekKartSayisi;
+        setMevcutSlayt((onceki) => (onceki <= 0 ? max : onceki - 1));
     };
 
-    // 5. OTOMATİK GEÇİŞ
+    // 👉 Otomatik geçiş
     useEffect(() => {
-        const interval = setInterval(nextSlide, 4000);
-        return () => clearInterval(interval);
-    }, [slidesToShow]);
+        const zamanlayici = setInterval(ileri, 4000);
+        return () => clearInterval(zamanlayici);
+    }, [gosterilecekKartSayisi]);
 
-    // 6. KAYDIRMA DEĞERİNİ HESAPLA
-    const getTransformValue = () => {
-        if (!cardWidth) return 'translateX(0px)';
+    // 👉 Kaydırma hesabı
+    const kaydirmaDegeri = () => {
+        if (!kartGenisligi) return 'translateX(0px)';
+        const bosluk = 20;
+        const deger = (kartGenisligi + bosluk) * mevcutSlayt;
+        return `translateX(-${deger}px)`;
+    };
 
-        const gap = 20;
-        const translateValue = (cardWidth + gap) * currentSlide;
-        return `translateX(-${translateValue}px)`;
+    // 👉 Dokunma olayları
+    const dokunmaBasladi = (e) => {
+        dokunmaBaslangicX.current = e.touches[0].clientX;
+    };
+
+    const dokunmaBitti = (e) => {
+        dokunmaBitisX.current = e.changedTouches[0].clientX;
+        dokunmaKontrol();
+    };
+
+    const dokunmaKontrol = () => {
+        const fark = dokunmaBaslangicX.current - dokunmaBitisX.current;
+
+        if (fark > 50) ileri();
+        else if (fark < -50) geri();
     };
 
     return (
-        <section className="kutu2" ref={containerRef}>
+        <section className="kutu2" ref={kapsayiciRef}>
             <h2>Web Tasarım Hizmetlerimiz</h2>
 
             <div className="slider-container">
                 <div
                     className="slides-track"
+                    onTouchStart={dokunmaBasladi}
+                    onTouchEnd={dokunmaBitti}
                     style={{
-                        transform: getTransformValue(),
+                        transform: kaydirmaDegeri(),
                         transition: 'transform 0.6s ease',
                         display: 'flex',
                         gap: '20px'
                     }}
                 >
-                    {slides.map((slide, index) => (
+                    {slaytlar.map((slayt, index) => (
                         <div
-                            key={slide.id}
-                            className={`slide-card ${index >= currentSlide && index < currentSlide + slidesToShow ? 'visible' : ''}`}
-                            style={{
-                                flex: `0 0 ${cardWidth}px`,
-                                minWidth: 0
-                            }}
+                            key={slayt.id}
+                            className={`slide-card ${index >= mevcutSlayt &&
+                                index < mevcutSlayt + gosterilecekKartSayisi
+                                ? 'visible'
+                                : ''
+                                }`}
+                            style={{ flex: `0 0 ${kartGenisligi}px` }}
                         >
                             <div className="card-content">
                                 <div className="image-container">
-                                    <img
-                                        src={slide.image}
-                                        alt={slide.title}
-                                        loading="lazy"
-                                    />
+                                    <img src={slayt.image} alt={slayt.title} />
                                 </div>
-                                <h3>{slide.title}</h3>
+
+                                <h3>{slayt.title}</h3>
+
                                 <button
                                     className="card-button"
-                                    onClick={() => handleButtonClick(slide.link)} // BU FONKSİYON ARTIK TANIMLI
+                                    onClick={() => navigate(slayt.link)}
                                 >
-                                    {slide.buttonText}
+                                    {slayt.buttonText}
                                 </button>
                             </div>
                         </div>
@@ -170,23 +188,8 @@ const Slider = () => {
                 </div>
             </div>
 
-            <button className="nav-btn prev-btn" onClick={prevSlide}>
-                ‹
-            </button>
-
-            <button className="nav-btn next-btn" onClick={nextSlide}>
-                ›
-            </button>
-
-            <div className="pagination-dots">
-                {Array.from({ length: Math.max(1, slides.length - slidesToShow + 1) }).map((_, index) => (
-                    <button
-                        key={index}
-                        className={`pagination-dot ${index === currentSlide ? 'active' : ''}`}
-                        onClick={() => setCurrentSlide(index)}
-                    />
-                ))}
-            </div>
+            <button className="nav-btn prev-btn" onClick={geri}>‹</button>
+            <button className="nav-btn next-btn" onClick={ileri}>›</button>
         </section>
     );
 };
