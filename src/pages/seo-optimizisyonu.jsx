@@ -4,10 +4,9 @@ import './seo.css';
 // import seoImage1 from '../images/images6.jpg';
 // import seoImage2 from '../images/seo2.jpg';
 
-const SEO = () => {
+const Seo = () => {
     return (
-        <main className="anaicerik">
-            {/* İlk Bölüm */}
+     <main className="anaicerik">
             <section className="icerik-seo">
 
 
@@ -96,4 +95,4 @@ const SEO = () => {
     );
 };
 
-export default SEO;
+export default Seo;

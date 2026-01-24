@@ -40,7 +40,6 @@ function App() {
             <Route path="/web-tasarim" element={<WebTasarim />} />
             <Route path="/logo-tasarimi" element={<LogoTasarimi />} />
             <Route path="/seo-optimizasyonu" element={<SEO />} />
-
             {/* ⬇️ DÜZELT: küçük harf */}
             <Route path="/ozel-kontrol-paneli" element={<OzelKontrolPaneli />} />
 

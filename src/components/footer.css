@@ -1,13 +1,4 @@
-.alt-bilgi {
-    display: flex;
-    background: #1a1a2e;
-    color: white;
-    padding: 3rem 1rem;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: 0;
-    /* EN ÖNEMLİ SATIR! */
-}
+
 
 .footer-icerik {
     display: flex;
