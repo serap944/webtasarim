@@ -38,24 +38,25 @@ const Gridkutusu = () => {
     ];
 
     return (
-        <section className="website-features">
-            <h1 className="features-title">
-                Websitede Olması Gerekenler
-            </h1>
+        <main className='anaicerik'>
+            <section className="website-features">
+                <h1 className="features-title">
+                    Websitede Olması Gerekenler
+                </h1>
 
-            <div className="grid-kutusu">
-                {features.map((feature) => (
-                    <div key={feature.id} className="kartx">
-                        <img
-                            src={feature.image}
-                            alt={feature.alt}
-                            className="feature-image"
-                        />
-                        <h3 className="feature-title">{feature.title}</h3>
-                    </div>
-                ))}
-            </div>
-        </section>
+                <div className="grid-kutusu">
+                    {features.map((feature) => (
+                        <div key={feature.id} className="kartx">
+                            <img
+                                src={feature.image}
+                                alt={feature.alt}
+                                className="feature-image"
+                            />
+                            <h3 className="feature-title">{feature.title}</h3>
+                        </div>
+                    ))}
+                </div>
+            </section> </main>
     );
 };
 
