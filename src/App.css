@@ -1,5 +1,5 @@
 .ana-kitap {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100%;
     display: flex;
     flex-direction: column;

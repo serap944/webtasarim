@@ -145,9 +145,9 @@ const Slider = () => {
                         <div
                             key={slayt.id}
                             className={`slide-card ${index >= mevcutSlayt &&
-                                    index < mevcutSlayt + gosterilecekKartSayisi
-                                    ? 'visible'
-                                    : ''
+                                index < mevcutSlayt + gosterilecekKartSayisi
+                                ? 'visible'
+                                : ''
                                 }`}
                             style={{ flex: `0 0 ${kartGenisligi}px` }}
                         >
