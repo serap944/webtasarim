@@ -1,44 +1,58 @@
-import React from 'react';
-import './container2.css';
+import React from "react";
+import "./container2.css";
 
 const Container2 = () => {
-    const kartcRef = React.useRef(null);
-    const [isVisible, setIsVisible] = React.useState(false);
+    const ref = React.useRef(null);
+    const [visible, setVisible] = React.useState(false);
 
     React.useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsVisible(entry.isIntersecting);
-            },
-            {
-                threshold: 0.1,
-                rootMargin: '-50px 0px' // Görünür alana girince tetiklenmesi için
-            }
-        );
+        const observer = new IntersectionObserver(([entry]) => {
+            setVisible(entry.isIntersecting);
+        }, { threshold: 0.15 });
 
-        const currentRef = kartcRef.current;
+        if (ref.current) observer.observe(ref.current);
 
-        if (currentRef) {
-            observer.observe(currentRef);
-        }
-
-        return () => {
-            if (currentRef) {
-                observer.unobserve(currentRef);
-            }
-        };
+        return () => observer.disconnect();
     }, []);
 
     return (
         <section className="container2">
-            <div ref={kartcRef} className={`kartc ${isVisible ? 'visible' : ''}`}>
+
+            <div ref={ref} className={`card ${visible ? "show" : ""}`}>
+
                 <h2>Neden Bizi Seçmelisiniz?</h2>
-                <p>✅ Profesyonel ve deneyimli tasarım ekibi</p>
-                <p>✅ Müşteri odaklı çözümler</p>
-                <p>✅ Her bütçeye uygun fiyatlandırma sağlıyoruz</p>
-                <p>✅ Hızlı teslimat ve sürekli destek</p>
-                <p>✅ Yaratıcı ve özgün tasarımlar</p>
+
+                <div className="features">
+
+                    <div className="feature">
+                        <span className="icon">⚡</span>
+                        <p>Profesyonel ve hızlı teslimat sistemi</p>
+                    </div>
+
+                    <div className="feature">
+                        <span className="icon">🎯</span>
+                        <p>Müşteri odaklı modern çözümler</p>
+                    </div>
+
+                    <div className="feature">
+                        <span className="icon">💰</span>
+                        <p>Her bütçeye uygun fiyatlandırma</p>
+                    </div>
+
+                    <div className="feature">
+                        <span className="icon">🚀</span>
+                        <p>Sürekli destek ve güncelleme sistemi</p>
+                    </div>
+
+                    <div className="feature">
+                        <span className="icon">🎨</span>
+                        <p>Özgün ve yaratıcı tasarımlar</p>
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
     );
 };

@@ -1,150 +1,129 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './container.css';
+import React, { useEffect, useRef, useState } from "react";
+import "./container.css";
 
 const Container = () => {
-    const [visibleElements, setVisibleElements] = useState({
+
+    const [visible, setVisible] = useState({
         karta: false,
         kartb: false,
-        kartc: false
+        info: false,
+        cta: false
     });
 
-    const kartaRef = useRef(null);
-    const kartbRef = useRef(null);
-    const kartcRef = useRef(null);
+    const refs = {
+        karta: useRef(null),
+        kartb: useRef(null),
+        info: useRef(null),
+        cta: useRef(null)
+    };
 
     useEffect(() => {
-        const observers = [];
 
-        // Her bir element için ayrı observer oluştur
-        const elements = [
-            { ref: kartaRef, key: 'karta' },
-            { ref: kartbRef, key: 'kartb' }
-
-        ];
-
-        elements.forEach(({ ref, key }) => {
-            const observer = new IntersectionObserver(
-                ([entry]) => {
-                    if (entry.isIntersecting) {
-                        // Görüş alanına girdiğinde
-                        setVisibleElements(prev => ({
-                            ...prev,
-                            [key]: true
-                        }));
-                    } else {
-                        // Görüş alanından çıktığında
-                        setVisibleElements(prev => ({
-                            ...prev,
-                            [key]: false
-                        }));
-                    }
-                },
-                {
-                    threshold: 0.2, // %20 görünürlük
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const key = entry.target.getAttribute("data-key");
+                    setVisible(prev => ({ ...prev, [key]: true }));
                 }
-            );
+            });
+        }, { threshold: 0.2 });
 
-            if (ref.current) {
-                observer.observe(ref.current);
-                observers.push(observer);
+        Object.keys(refs).forEach(key => {
+            if (refs[key].current) {
+                observer.observe(refs[key].current);
             }
         });
 
-        return () => {
-            observers.forEach(observer => {
-                observer.disconnect();
-            });
-        };
+        return () => observer.disconnect();
+
     }, []);
 
     return (
+        <div className="page">
 
+            {/* HERO */}
+            <section className="hero">
+                <h1>İşletmenizi Dijitale Taşıyın</h1>
+                <p>Web siteniz yoksa, müşterileriniz sizi bulamaz.</p>
 
-        <section className="kart-container">
+            </section>
 
-            <div className="container1">
-
-                {/* SOL - METİN */}
-                <section className="akutu">
-                    <h2>Website Neden Önemlidir?</h2>
-
-                    <p className="lead">
-                        İşletmeniz internette yoksa, müşterileriniz sizi bulamaz.
-                    </p>
-
-                    <p>
-                        İnsanlar bir hizmet almadan önce Google’da araştırma yapar.
-                        Eğer siz görünmüyorsanız, müşterileriniz rakiplerinize gider.
-                    </p>
-
-                    <p>
-                        Web siteniz sizin <strong>7/24 çalışan dijital satış temsilcinizdir.</strong>
-                        Güven oluşturur, marka değerinizi artırır ve müşteri kazandırır.
-                    </p>
-
-                    <p>
-                        Sosyal medya geçicidir. Ama web sitesi sizin kontrolünüzde olan
-                        kalıcı bir dijital varlıktır.
-                    </p>
-
-                    <p className="highlight">
-                        Daha fazla müşteri ve profesyonel görünüm için web sitesi artık zorunluluktur.
-                    </p>
-
-
-                </section>
-
-
-                {/* SAĞ - İSTATİSTİK */}
-                <section className="bkutu">
-
-                    <div className="statBox">
-                        <h3>%98</h3>
-                        <p>Müşteri Memnuniyeti</p>
-                    </div>
-
-                    <div className="statBox">
-                        <h3>7/24</h3>
-                        <p>Destek</p>
-                    </div>
-
-                    <div className="statBox">
-                        <h3>100+</h3>
-                        <p>Tamamlanan Proje</p>
-                    </div>
-
-                </section>
-
-            </div>
-
-            {/* karta - Fırsatlar */}
-            <div
-                ref={kartaRef}
-                className={`karta ${visibleElements.karta ? 'visible' : ''}`}
+            {/* INFO */}
+            <section
+                ref={refs.info}
+                data-key="info"
+                className={`info ${visible.info ? "show" : ""}`}
             >
-                <h2>Fırsatlar</h2>
-                <p>Yeni Açıldığımız İçin Cömertiz!</p>
-                <p>🎯 ÜCRETSİZ Demo + 7 Gün Ücretsiz Kullanım!</p>
-                <p>→ "Beğenmediğiniz takdirde ücret almıyoruz!"</p>
-                <h3>İlk 2 Hafta ÜCRETSİZ Güncelleme!</h3>
-                <p>🎯→ "Aklınıza sonradan gelenleri ekliyoruz."</p>
-            </div>
+                <h2>Neden Web Sitesi?</h2>
 
-            {/* kartb - Web Tasarım bilgisi */}
-            <div
-                ref={kartbRef}
-                className={`kartb ${visibleElements.kartb ? 'visible' : ''}`}
+                <div className="grid">
+
+                    <div className="infoCard">
+                        <h3>⚡ Hızlı</h3>
+                        <p>3-7 gün içinde teslim</p>
+                    </div>
+
+                    <div className="infoCard">
+                        <h3>🎯 SEO</h3>
+                        <p>Google’da üst sıralar</p>
+                    </div>
+
+                    <div className="infoCard">
+                        <h3>📱 Mobil</h3>
+                        <p>Tüm cihazlara uyumlu</p>
+                    </div>
+
+                </div>
+            </section>
+
+            {/* FIRSAT */}
+            <section
+                ref={refs.karta}
+                data-key="karta"
+                className={`karta ${visible.karta ? "show" : ""}`}
             >
-                <h2>Web Tasarımın Önemi</h2>
-                <p>🌐 Web tasarım, dijital dünyada kurumsal kimliğin en önemli parçasıdır.</p>
-                <p>💡 Kullanıcı deneyimi (UX) ve arayüz tasarımı (UI), bir web sitesinin başarısını doğrudan etkiler.</p>
-                <p>🚀 Responsive tasarım sayesinde her cihazda mükemmel görüntü sağlanır.</p>
-                <p>⭐ İyi bir web tasarım, marka değerini artırır ve güven oluşturur.</p>
-                <p>🎯 Modern web tasarım, hem estetik hem de işlevselliği bir arada sunar.</p>
-            </div>
+                <h2>Özel Fırsat</h2>
+                <p>Ücretsiz demo + 7 gün kullanım</p>
+                <p>Memnun kalmazsan ödeme yok</p>
+                <p>İlk 2 hafta ücretsiz revizyon</p>
+            </section>
 
+            {/* GROWTH */}
+            <section
+                ref={refs.kartb}
+                data-key="kartb"
+                className={`kartb ${visible.kartb ? "show" : ""}`}
+            >
 
-        </section >
+                <div className="chart">
+
+                    <div className="bar" style={{ height: "30%" }}><span>%20</span></div>
+                    <div className="bar" style={{ height: "50%" }}><span>%40</span></div>
+                    <div className="bar" style={{ height: "70%" }}><span>%65</span></div>
+                    <div className="bar highlight" style={{ height: "95%" }}><span>%90</span></div>
+
+                </div>
+
+                <div className="text">
+                    <h3>Ziyaretçi → Müşteri</h3>
+                    <p>Web siteniz sadece görünür olmak için değil, satış yapmak içindir.</p>
+                    <p className="accent">Dijital sisteminiz zamanla gelir üretir.</p>
+                </div>
+
+            </section>
+
+            {/* CTA */}
+            <section
+                ref={refs.cta}
+                data-key="cta"
+                className={`cta ${visible.cta ? "show" : ""}`}
+            >
+                <h2>Hazır mısınız?</h2>
+                <p>Dijitalde kaybolmayın, büyümeye başlayın.</p>
+
+            </section>
+
+        </div>
     );
 };
 
