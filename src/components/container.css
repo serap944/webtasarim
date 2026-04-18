@@ -1,4 +1,119 @@
-/* Temel kart stilleri - başlangıç durumu */
+.container1 {
+    display: flex;
+    gap: 40px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* SOL */
+.akutu {
+    flex: 2;
+}
+
+.akutu h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.akutu p {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* ilk paragraf güçlü başlık gibi */
+.lead {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* vurgu */
+.highlight {
+    font-weight: bold;
+    color: #6c5ce7;
+}
+
+/* BUTON */
+.ctaBtn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.ctaBtn:hover {
+    background: #5848c2;
+}
+
+/* SAĞ */
+.bkutu {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.statBox {
+    background: #f5f6fa;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.statBox:hover {
+    transform: translateY(-5px);
+}
+
+.statBox h3 {
+    font-size: 30px;
+    color: #6c5ce7;
+}
+
+.statBox p {
+    margin-top: 5px;
+    color: #555;
+}
+
+/* 🔥 MOBİL UYUM */
+@media (max-width: 768px) {
+
+    .container1 {
+        flex-direction: column;
+        /* alt alta */
+        padding: 40px 15px;
+    }
+
+    .akutu h2 {
+        font-size: 24px;
+    }
+
+    .lead {
+        font-size: 16px;
+    }
+
+    .bkutu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .statBox {
+        width: 45%;
+        padding: 15px;
+    }
+
+    .statBox h3 {
+        font-size: 22px;
+    }
+}
+
 .karta,
 .kartb {
     opacity: 0;

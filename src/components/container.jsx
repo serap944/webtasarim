@@ -58,7 +58,65 @@ const Container = () => {
     }, []);
 
     return (
+
+
         <section className="kart-container">
+
+            <div className="container1">
+
+                {/* SOL - METİN */}
+                <section className="akutu">
+                    <h2>Website Neden Önemlidir?</h2>
+
+                    <p className="lead">
+                        İşletmeniz internette yoksa, müşterileriniz sizi bulamaz.
+                    </p>
+
+                    <p>
+                        İnsanlar bir hizmet almadan önce Google’da araştırma yapar.
+                        Eğer siz görünmüyorsanız, müşterileriniz rakiplerinize gider.
+                    </p>
+
+                    <p>
+                        Web siteniz sizin <strong>7/24 çalışan dijital satış temsilcinizdir.</strong>
+                        Güven oluşturur, marka değerinizi artırır ve müşteri kazandırır.
+                    </p>
+
+                    <p>
+                        Sosyal medya geçicidir. Ama web sitesi sizin kontrolünüzde olan
+                        kalıcı bir dijital varlıktır.
+                    </p>
+
+                    <p className="highlight">
+                        Daha fazla müşteri ve profesyonel görünüm için web sitesi artık zorunluluktur.
+                    </p>
+
+
+                </section>
+
+
+                {/* SAĞ - İSTATİSTİK */}
+                <section className="bkutu">
+
+                    <div className="statBox">
+                        <h3>%98</h3>
+                        <p>Müşteri Memnuniyeti</p>
+                    </div>
+
+                    <div className="statBox">
+                        <h3>7/24</h3>
+                        <p>Destek</p>
+                    </div>
+
+                    <div className="statBox">
+                        <h3>100+</h3>
+                        <p>Tamamlanan Proje</p>
+                    </div>
+
+                </section>
+
+            </div>
+
             {/* karta - Fırsatlar */}
             <div
                 ref={kartaRef}
@@ -86,7 +144,7 @@ const Container = () => {
             </div>
 
 
-        </section>
+        </section >
     );
 };
 
