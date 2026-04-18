@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 import TeklifFormModal from './teklifForm'; // Modal bileşenini import et
+import logo from "../assets/images/noradarklogo.png";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +28,10 @@ const Header = () => {
         <header>
             <nav className="menu-cubugu">
                 <h2 className="logo">
-                    <Link to="/" onClick={handleLinkClick}>Noradark</Link>
+                    <Link to="/" onClick={handleLinkClick}>
+                        <img src={logo} alt="Noradark Logo" className="logo-img" />
+
+                    </Link>
                 </h2>
 
                 <div className="teklif">

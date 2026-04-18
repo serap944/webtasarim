@@ -11,55 +11,50 @@ button {
 }
 
 header {
-    height: 60px;
+
+    height: auto;
     position: sticky;
     top: 0;
-    background: white;
+    background-color: #9590f7;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    margin: 0;
 }
 
 .menu-cubugu {
     display: flex;
-    position: fixed;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+    /* space-around yerine */
+    padding: 5px 10px;
+
+
     width: 100%;
     top: 0;
     z-index: 999;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0.6rem 1rem;
-    background: linear-gradient(to right, #817aff, #434085);
     color: white;
 }
 
-/* LOGO DÜZELTMESİ - EN ÖNEMLİ KISIM */
 .logo {
-    font-weight: 800;
-    font-size: 1.8rem;
-    color: #060077;
-    font-style: italic;
-    z-index: 1001;
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+    margin: 0;
+    padding: 10px;
 }
 
 .logo a {
+    display: flex;
+    align-items: center;
     text-decoration: none;
-    color: inherit;
-    padding: 8px 12px;
-    transition: all 0.2s ease;
-    display: inline-block;
 }
 
-/* Hover efekti */
-.logo a:hover {
-    background-color: rgba(6, 0, 119, 0.1);
-    transform: translateY(-1px);
-    color: #060077 !important;
-}
-
-/* Active durumu - kırmızı rengi engelle */
-.logo a:active {
-    transform: translateY(0);
-    color: #060077 !important;
+.logo-img {
+    width: 160px;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
 /* Focus durumu
@@ -98,7 +93,9 @@ header {
     gap: 0.5rem;
     align-items: center;
     list-style: none;
-    font-weight: 700;
+
+    color: white;
+    font-size: 1.1rem;
 }
 
 .menu-oge {
@@ -221,4 +218,27 @@ header {
     .acilir-pencere a {
         padding-left: 32px;
     }
+}
+
+@media (max-width: 450px) {
+    body {
+        position: relative;
+    }
+
+    header {
+
+        overflow: visible;
+
+    }
+
+
+
+    .teklif {
+        display: flex;
+        position: fixed;
+        bottom: 20px;
+        gap: 4px;
+        left: 20px;
+    }
+
 }
